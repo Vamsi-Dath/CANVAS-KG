@@ -5,6 +5,6 @@ Visualization framework for capturing Collaborative Authoring in Urban Visual An
 
 ```
 python run.py \
-    --input_text_file_path ./datasets/{dataset}.txt \
-    --output_dir ./output/{dataset}
+    --input_text_file_path ./data/input/{dataset}.txt \
+    --output_dir ./data/output/{dataset}
 ```
