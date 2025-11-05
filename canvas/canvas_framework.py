@@ -1,5 +1,6 @@
 import logging
 from importlib import reload
+from utils.helper import run_ollama
 
 reload(logging)
 logger = logging.getLogger(__name__)
@@ -15,5 +16,7 @@ class CanvasKG:
         logger.info(f"Output directory set to: {self.output_dir}")
 
     def run(self) -> None:
-        logger.info("CanvasKG run starts...")
+        logger.info("\n\nCanvasKG run starts...\n")
+        print(run_ollama("llama2", "You are a friendly neighbour", "Who are you?"))
+        logger.info("\n\nCanvasKG run ends.\n")
         return None
