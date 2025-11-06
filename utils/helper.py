@@ -1,6 +1,9 @@
 import subprocess
 import time
 import logging
+import csv
+from pathlib import Path
+from schema.entity import Entity
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -36,3 +39,29 @@ def run_ollama(model:str, system_prompt:str, user_prompt:str, max_tries=10, time
     
     logging.debug(f"Model: {model}\n""Prompt:\n {user_prompt}\n""Result: {response}\n")
     return response
+
+def validate_entity(entity_json: str) -> Entity:
+    try:
+        entity = Entity.model_validate_json(entity_json)
+        logging.debug(f"Validated Entity: {entity}")
+        return entity
+    except Exception as e:
+        logging.error(f"Validation error: {e}")
+        raise
+
+def save_e_to_csv(output_dir: str, output_file_name: str, entities: list[Entity]) -> None:
+    Path(output_dir).mkdir(parents=True, exist_ok=True)
+    output_file_path = Path(output_dir)/output_file_name
+    file_exists = output_file_path.is_file()
+    try:
+        with open(output_file_path, mode='a', newline='', encoding='utf-8') as f:
+            fieldnames = Entity.model_fields.keys()
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            if not file_exists:
+                writer.writeheader()
+            for entity in entities:
+                writer.writerow(entity.model_dump())
+        logging.info(f"Entities: {len(entities)} saved to {output_file_path}")
+    except Exception as e:
+        logging.error(f"Error saving to {output_file_path}: {e}")
+        raise

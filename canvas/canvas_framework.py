@@ -1,6 +1,7 @@
 import logging
 from importlib import reload
 from utils.helper import run_ollama
+from canvas.extract import Extractor
 
 reload(logging)
 logger = logging.getLogger(__name__)
@@ -16,7 +17,11 @@ class CanvasKG:
         logger.info(f"Output directory set to: {self.output_dir}")
 
     def run(self) -> None:
-        logger.info("\n\nCanvasKG run starts...\n")
-        print(run_ollama("llama2", "You are a friendly neighbour", "Who are you?"))
-        logger.info("\n\nCanvasKG run ends.\n")
+        logger.info("\n\tCanvasKG run starts...\n")
+        extractor = Extractor(self.input_text_file_path,
+                              self.output_dir,
+                              output_file_name="output.csv")
+        extracted_entities = extractor.extract_entities()
+        logger.info(f"Extracted Entities: {extracted_entities}")
+        logger.info("\n\tCanvasKG run ends.\n")
         return None
