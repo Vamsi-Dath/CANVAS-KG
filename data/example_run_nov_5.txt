@@ -1,0 +1,50 @@
+(.venv) (base) vamsi@Vamsis-MacBook-Air CANVAS-KG % python run.py
+INFO:canvas.canvas_framework:Intializing CanvasKG
+INFO:canvas.canvas_framework:Input text file path set to: ./data/input/example.txt
+INFO:canvas.canvas_framework:Output directory set to: ./data/output/
+INFO:canvas.canvas_framework:
+        CanvasKG run starts...
+
+INFO:canvas.extract:Line 0 run status: Completed
+INFO:root:      Line 0 extracted entities count: 3
+INFO:canvas.extract:Line 1 skipped: Empty line.
+INFO:canvas.extract:Line 2 run status: Completed
+INFO:root:      Line 2 extracted entities count: 3
+INFO:canvas.extract:Line 3 skipped: Empty line.
+INFO:canvas.extract:Line 4 run status: Completed
+INFO:root:      Line 4 extracted entities count: 4
+INFO:canvas.extract:Line 5 run status: Completed
+INFO:root:      Line 5 extracted entities count: 5
+INFO:canvas.extract:Line 6 skipped: Empty line.
+INFO:canvas.extract:Line 7 run status: Completed
+INFO:root:      Line 7 extracted entities count: 2
+INFO:canvas.extract:Line 8 run status: Completed
+INFO:root:      Line 8 extracted entities count: 3
+INFO:canvas.extract:Line 9 skipped: Empty line.
+INFO:canvas.extract:Line 10 run status: Completed
+INFO:root:      Line 10 extracted entities count: 5
+INFO:canvas.extract:Line 11 run status: Completed
+INFO:root:      Line 11 extracted entities count: 9
+INFO:canvas.extract:Line 12 run status: Completed
+INFO:root:      Line 12 extracted entities count: 6
+INFO:canvas.extract:Line 13 skipped: Empty line.
+INFO:canvas.extract:Line 14 run status: Completed
+INFO:root:      Line 14 extracted entities count: 5
+INFO:canvas.extract:Line 15 run status: Completed
+INFO:root:      Line 15 extracted entities count: 3
+INFO:canvas.extract:Line 16 run status: Completed
+INFO:root:      Line 16 extracted entities count: 4
+INFO:canvas.extract:Line 17 skipped: Empty line.
+INFO:canvas.extract:Line 18 run status: Completed
+INFO:root:      Line 18 extracted entities count: 3
+INFO:canvas.extract:Line 19 skipped: Empty line.
+INFO:canvas.extract:Line 20 run status: Completed
+INFO:root:      Line 20 extracted entities count: 9
+INFO:canvas.extract:Line 21 run status: Completed
+INFO:root:      Line 21 extracted entities count: 3
+INFO:root:Total validated entities count: 67
+
+INFO:root:Entities: 67 saved to data/output/output.csv
+INFO:canvas.canvas_framework:Extracted Entities: [Entity(idx=1, name='Week', type='date', confidence=1.0, description='', properties={}), Entity(idx=2, name='22-09-2025', type='date', confidence=1.0, description='', properties={}), Entity(idx=3, name='29-09-2025', type='date', confidence=1.0, description='', properties={}), Entity(idx=1, name='project', type='Entity', confidence=1.0, description='', properties={}), Entity(idx=2, name='what', type='Entity', confidence=1.0, description='', properties={}), Entity(idx=3, name='know', type='Entity', confidence=1.0, description='', properties={}), Entity(idx=0, name='project', type='entity', confidence=1.0, description='', properties={}), Entity(idx=1, name='instructions', type='entity', confidence=1.0, description='', properties={}), Entity(idx=2, name='documentation', type='entity', confidence=1.0, description='', properties={}), Entity(idx=3, name='week', type='entity', confidence=1.0, description='', properties={}), Entity(idx=1, name='pretend', type='verb', confidence=1.0, description='', properties={}), Entity(idx=2, name='achieve', type='verb', confidence=1.0, description='', properties={}), Entity(idx=3, name='scope', type='noun', confidence=1.0, description='', properties={}), Entity(idx=4, name='research questions', type='noun', confidence=1.0, description='', properties={}), Entity(idx=5, name='building', type='noun', confidence=1.0, description='', properties={}), Entity(idx=0, name='Vamsi', type='person', confidence=1.0, description='', properties={}), Entity(idx=1, name='knowledge graph', type='entity', confidence=1.0, description='', properties={}), Entity(idx=0, name='he', type='person', confidence=1.0, description='', properties={}), Entity(idx=1, name='our', type='organization', confidence=1.0, description='', properties={}), Entity(idx=2, name='projects', type='thing', confidence=1.0, description='', properties={}), Entity(idx=0, name='approach', type='entity', confidence=1.0, description='', properties={}), Entity(idx=1, name='simulation', type='entity', confidence=1.0, description='', properties={}), Entity(idx=2, name='driver', type='entity', confidence=1.0, description='', properties={}), Entity(idx=3, name='route', type='entity', confidence=1.0, description='', properties={}), Entity(idx=4, name='hazardous weather', type='entity', confidence=1.0, description='', properties={}), Entity(idx=0, name='make', type='NOUN', confidence=1.0, description='', properties={}), Entity(idx=1, name='algorithm', type='NOUN', confidence=1.0, description='', properties={}), Entity(idx=2, name='cheap', type='ADJ', confidence=1.0, description='', properties={}), Entity(idx=3, name='possible', type='ADJ', confidence=1.0, description='', properties={}), Entity(idx=4, name='generating', type='VERB', confidence=1.0, description='', properties={}), Entity(idx=5, name='documentation', type='NOUN', confidence=1.0, description='', properties={}), Entity(idx=6, name='interaction', type='NOUN', confidence=1.0, description='', properties={}), Entity(idx=7, name='domain', type='NOUN', confidence=1.0, description='', properties={}), Entity(idx=8, name='experts', type='NOUN', confidence=1.0, description='', properties={}), Entity(idx=0, name='user', type='person', confidence=1.0, description='', properties={}), Entity(idx=1, name='documents', type='object', confidence=1.0, description='', properties={}), Entity(idx=2, name='corrections', type='task', confidence=1.0, description='', properties={}), Entity(idx=3, name='project', type='object', confidence=1.0, description='', properties={}), Entity(idx=4, name='definition', type='task', confidence=1.0, description='', properties={}), Entity(idx=5, name='template', type='object', confidence=1.0, description='', properties={}), Entity(idx=1, name='meeting', type='Event', confidence=1.0, description='', properties={}), Entity(idx=2, name='problem', type='Object', confidence=1.0, description='', properties={}), Entity(idx=3, name='domain experts', type='Group', confidence=1.0, description='', properties={}), Entity(idx=4, name='data', type='Quantity', confidence=1.0, description='', properties={}), Entity(idx=5, name='things', type='Set', confidence=1.0, description='', properties={}), Entity(idx=1, name='Person', type='PERSON', confidence=1.0, description='', properties={}), Entity(idx=2, name='Approach', type='APPROACH', confidence=1.0, description='', properties={}), Entity(idx=3, name='Domain Expert', type='DOMAIN_EXPERT', confidence=1.0, description='', properties={}), Entity(idx=1, name='Meeting', type='Event', confidence=1.0, description='', properties={'attendees': [], 'time': '30 minutes'}), Entity(idx=2, name='Domain Experts', type='Organization', confidence=1.0, description='', properties={'name': 'Domain Experts'}), Entity(idx=3, name='Approach', type='Concept', confidence=1.0, description='', properties={'name': 'quick and efficient'}), Entity(idx=4, name='Feedback', type='Concept', confidence=1.0, description='', properties={'name': 'meaningful feedback'}), Entity(idx=1, name='project', type='Organization', confidence=1.0, description='', properties={}), Entity(idx=2, name='proposal', type='Document', confidence=1.0, description='', properties={}), Entity(idx=3, name='tasks', type='Task', confidence=1.0, description='', properties={}), Entity(idx=1, name='Currently', type='ADV', confidence=1.0, description='', properties={}), Entity(idx=2, name='waiting', type='VERB', confidence=1.0, description='', properties={}), Entity(idx=3, name='for', type='PREP', confidence=1.0, description='', properties={}), Entity(idx=4, name='their', type='PRON', confidence=1.0, description='', properties={}), Entity(idx=5, name='data', type='NOUN', confidence=1.0, description='', properties={}), Entity(idx=6, name='modelling', type='NOUN', confidence=1.0, description='', properties={}), Entity(idx=7, name='if', type='CONJ', confidence=1.0, description='', properties={}), Entity(idx=8, name='I', type='PRON', confidence=1.0, description='', properties={}), Entity(idx=9, name='manage', type='VERB', confidence=1.0, description='', properties={}), Entity(idx=1, name='project', type='organization', confidence=0.95, description='', properties={}), Entity(idx=2, name='frontend', type='software', confidence=0.87, description='', properties={}), Entity(idx=3, name='timeline', type='event', confidence=0.92, description='', properties={})]
+INFO:canvas.canvas_framework:
+        CanvasKG run ends.
