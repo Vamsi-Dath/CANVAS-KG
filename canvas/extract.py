@@ -1,6 +1,7 @@
-from utils.helper import run_ollama, validate_entity, save_e_to_csv
+from utils.helper import run_ollama, validate_entity, save_e_to_csv, remove_duplicates_from_e_csv
 from schema.entity import Entity
 import logging
+from pathlib import Path
 
 logger = logging.getLogger(__name__)
 class Extractor:
@@ -69,6 +70,11 @@ class Extractor:
 
         if self.output_dir and self.output_file_name and self.output_file_name.endswith('.csv'):
             save_e_to_csv(self.output_dir, self.output_file_name, entities)
+        
+        remove_duplicates_from_e_csv(
+            input_file_path=Path(self.output_dir)/self.output_file_name,
+            output_file_path=Path(self.output_dir)/f"unq_{self.output_file_name}"
+        )
 
         return entities
     

@@ -1,0 +1,65 @@
+idx,name,type,confidence,description,properties
+1,Week,date,1.0,,{}
+2,22-09-2025,date,1.0,,{}
+3,29-09-2025,date,1.0,,{}
+1,project,Entity,1.0,,{}
+2,what,Entity,1.0,,{}
+3,know,Entity,1.0,,{}
+1,instructions,entity,1.0,,{}
+2,documentation,entity,1.0,,{}
+3,week,entity,1.0,,{}
+1,pretend,verb,1.0,,{}
+2,achieve,verb,1.0,,{}
+3,scope,noun,1.0,,{}
+4,research questions,noun,1.0,,{}
+5,building,noun,1.0,,{}
+0,Vamsi,person,1.0,,{}
+1,knowledge graph,entity,1.0,,{}
+0,he,person,1.0,,{}
+1,our,organization,1.0,,{}
+2,projects,thing,1.0,,{}
+0,approach,entity,1.0,,{}
+1,simulation,entity,1.0,,{}
+2,driver,entity,1.0,,{}
+3,route,entity,1.0,,{}
+4,hazardous weather,entity,1.0,,{}
+0,make,NOUN,1.0,,{}
+1,algorithm,NOUN,1.0,,{}
+2,cheap,ADJ,1.0,,{}
+3,possible,ADJ,1.0,,{}
+4,generating,VERB,1.0,,{}
+5,documentation,NOUN,1.0,,{}
+6,interaction,NOUN,1.0,,{}
+7,domain,NOUN,1.0,,{}
+8,experts,NOUN,1.0,,{}
+0,user,person,1.0,,{}
+1,documents,object,1.0,,{}
+2,corrections,task,1.0,,{}
+3,project,object,1.0,,{}
+4,definition,task,1.0,,{}
+5,template,object,1.0,,{}
+1,meeting,Event,1.0,,{}
+2,problem,Object,1.0,,{}
+3,domain experts,Group,1.0,,{}
+4,data,Quantity,1.0,,{}
+5,things,Set,1.0,,{}
+1,Person,PERSON,1.0,,{}
+2,Approach,APPROACH,1.0,,{}
+3,Domain Expert,DOMAIN_EXPERT,1.0,,{}
+2,Domain Experts,Organization,1.0,,{'name': 'Domain Experts'}
+3,Approach,Concept,1.0,,{'name': 'quick and efficient'}
+4,Feedback,Concept,1.0,,{'name': 'meaningful feedback'}
+1,project,Organization,1.0,,{}
+2,proposal,Document,1.0,,{}
+3,tasks,Task,1.0,,{}
+1,Currently,ADV,1.0,,{}
+2,waiting,VERB,1.0,,{}
+3,for,PREP,1.0,,{}
+4,their,PRON,1.0,,{}
+5,data,NOUN,1.0,,{}
+6,modelling,NOUN,1.0,,{}
+7,if,CONJ,1.0,,{}
+8,I,PRON,1.0,,{}
+9,manage,VERB,1.0,,{}
+2,frontend,software,0.87,,{}
+3,timeline,event,0.92,,{}

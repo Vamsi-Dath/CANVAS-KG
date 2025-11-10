@@ -65,3 +65,26 @@ def save_e_to_csv(output_dir: str, output_file_name: str, entities: list[Entity]
     except Exception as e:
         logging.error(f"Error saving to {output_file_path}: {e}")
         raise
+
+def remove_duplicates_from_e_csv(input_file_path: str, output_file_path: str) -> None:
+    #convert everything to lowercase for comparison
+    try:
+        unique_entities = {}
+        with open(input_file_path, mode='r', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                key = (row['name'].lower(), row['type'].lower())
+                if key not in unique_entities:
+                    unique_entities[key] = row
+            
+        with open(output_file_path, mode='w', newline='', encoding='utf-8') as f:
+            fieldnames = ['idx', 'name', 'type', 'confidence', 'description', 'properties']
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
+            for entity in unique_entities.values():
+                writer.writerow(entity)
+        logging.info(f"Removed duplicates, no. of unique entities: {len(unique_entities)}")
+
+    except Exception as e:
+        logging.error(f"Error removing duplicates from {input_file_path} to {output_file_path}: {e}")
+        raise
