@@ -30,6 +30,7 @@ class Extractor:
                         start = None
         return json_objects
     
+    """
     def extract_entities_by_line(self) -> list[Entity]:
         raw_entities = []
         for idx, line in enumerate(open(self.input_text_file_path, 'r', encoding='utf-8')):
@@ -71,7 +72,8 @@ class Extractor:
         )
 
         return entities
-    
+    """
+
     def extract_entities_by_file(self) -> list[Entity]:
         raw_entities = []
         text = open(self.input_text_file_path, 'r', encoding='utf-8').read()
