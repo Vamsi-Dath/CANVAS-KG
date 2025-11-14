@@ -1,18 +1,21 @@
-from utils.helper import run_ollama, validate_entity, save_e_to_csv, remove_duplicates_from_e_csv, openai_chat_completion
+from utils.helper import run_ollama, validate_entity, validate_relation, save_e_to_csv, save_r_to_csv, remove_duplicates_from_e_csv, remove_duplicates_from_r_csv, openai_chat_completion
 from schema.entity import Entity
+from schema.relation import Relation
 import logging
 from pathlib import Path
 import json
 
 logger = logging.getLogger(__name__)
 class Extractor:
-    def __init__(self, input_text_file_path: str, output_dir: str, output_file_name: str, entity_bank_json_path: str, system_prompt_template_path: str, openai_model: str) -> None:
+    def __init__(self, input_text_file_path: str, output_dir: str, output_file_name: str, entity_bank_json_path: str, system_prompt_template_path: str, relationship_extraction_template_path: str, openai_model: str, local_model: str) -> None:
         self.input_text_file_path = input_text_file_path
         self.output_dir = output_dir
         self.output_file_name = output_file_name
         self.entity_bank_json_path = entity_bank_json_path
         self.system_prompt_template_path = system_prompt_template_path
+        self.relationship_extraction_template_path = relationship_extraction_template_path
         self.openai_model = openai_model
+        self.local_model = local_model
 
     def extract_json_objects(self, text: str) -> list[str]:
         json_objects = []
@@ -48,7 +51,7 @@ class Extractor:
 
             user_prompt = f"Input Text:\n{line.strip()}"
 
-            response = run_ollama("llama3.1:8b", system_prompt, user_prompt)
+            response = run_ollama(self.local_model, system_prompt, user_prompt)
             logger.info(f"Line {idx} run status: Completed")
             raw_jsons = self.extract_json_objects(response)
             logging.info(f"\tLine {idx} extracted entities count: {len(raw_jsons)}")
@@ -97,7 +100,7 @@ class Extractor:
                 max_tokens=4000
             )
         else:
-            response = run_ollama("llama3.1:8b", system_prompt, user_prompt)
+            response = run_ollama(self.local_model, system_prompt, user_prompt)
 
         logger.info(f"File run status: Completed")
         raw_jsons = self.extract_json_objects(response)
@@ -113,12 +116,12 @@ class Extractor:
                 continue
         logging.info(f"Total validated entities count: {len(entities)}\n")
 
-        dir = Path(self.output_dir)/Path(self.input_text_file_path).stem
+        dir = Path(self.output_dir)/Path(self.input_text_file_path).stem/"entities"
         
         if self.openai_model:
             dir = dir / self.openai_model
         else:
-            dir = dir / "llama3.1_8b"
+            dir = dir / self.local_model
             
         dir.mkdir(parents=True, exist_ok=True)
         if self.output_dir and self.output_file_name and self.output_file_name.endswith('.csv'):
@@ -131,3 +134,69 @@ class Extractor:
 
         return entities
     
+    def extract_realtions_by_file(self) -> list[Relation]:
+        extracted_relations = []
+        text = open(self.input_text_file_path, 'r', encoding='utf-8').read()
+
+        dir = Path(self.output_dir) / Path(self.input_text_file_path).stem / "nlp_processed_entities"
+
+        if self.openai_model:
+            dir = dir / self.openai_model
+        else:
+            dir = dir / self.local_model
+
+        dedup_file = dir / "nlp_processed_entities_dedup.csv"
+
+        with open(dedup_file, 'r', encoding='utf-8') as f:
+            extracted_entities = f.read()
+
+
+        realtionship_extraction_template = open(self.relationship_extraction_template_path, 'r', encoding='utf-8').read()
+        system_prompt = realtionship_extraction_template.format_map({
+            "extracted_entities": extracted_entities
+        })
+
+        user_prompt = f"Input Text:\n{text}"
+
+        if self.openai_model:
+            response = openai_chat_completion(
+                model=self.openai_model,
+                system_prompt=system_prompt,
+                user_prompt=[{"role": "user", "content": user_prompt}],
+                temperature=0.7,
+                max_tokens=4000
+            )
+        else:
+            response = run_ollama(self.local_model, system_prompt, user_prompt)
+
+        logger.info(f"File run status: Completed")
+        raw_jsons = self.extract_json_objects(response)
+        logging.info(f"\tExtracted relations count: {len(raw_jsons)}")
+        extracted_relations = extracted_relations + raw_jsons
+
+        relations = []
+        for r in extracted_relations:
+            try:
+                relations.append(validate_relation(r))
+            except Exception as ve:
+                logging.warning(f"Skipping Relation: {r}, due to failed pydantic validation")
+                continue
+        logging.info(f"Total validated relations count: {len(relations)}\n")
+
+        dir = Path(self.output_dir)/Path(self.input_text_file_path).stem/Path("relations")
+
+        if self.openai_model:
+            dir = dir / self.openai_model
+        else:
+            dir = dir / self.local_model
+
+        dir.mkdir(parents=True, exist_ok=True)
+        if self.output_dir and self.output_file_name and self.output_file_name.endswith('.csv'):
+            save_r_to_csv(dir, self.output_file_name, relations)
+
+        remove_duplicates_from_r_csv(
+            input_file_path=dir / self.output_file_name,
+            output_file_path=dir / f"unq_{self.output_file_name}"
+        )
+
+        return relations

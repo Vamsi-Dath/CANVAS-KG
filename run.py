@@ -34,11 +34,23 @@ if __name__ == "__main__":
         help = "Path to the system prompt template file."
     )
     parser.add_argument(
+        "--relationship_extraction_template_path",
+        default = "./prompts/relationship_extraction_template.txt",
+        type = str,
+        help = "Path to the relationship extraction prompt template file."
+    )
+    parser.add_argument(
         "--openai_model",
         default = None,
         type = str,
         help = "OpenAI model to use for processing."
     )
+    parser.add_argument(
+        "--local_model",
+        default = "llama3.1:8b",
+        type = str,
+        help = "Local on-device model usage."
+    )   
     args = parser.parse_args()
     args = vars(args)
     canvas_kg = CanvasKG(**args)

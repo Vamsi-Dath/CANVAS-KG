@@ -1,0 +1,11 @@
+id,type,subject_entity_id,predicate,object_entity_id,confidence,description,properties
+0,relation,0,occurred_during,1,0.7,,{}
+1,relation,0,related_to,3,0.9,about Week 1 and what documentation,{}
+2,relation,2,part_of,4,0.8,,{}
+3,relation,5,related_to,6,0.7,,{}
+4,relation,2,describes,4,0.6,,{}
+5,relation,7,has_problem,10,0.9,about my approach and this problem,{}
+6,relation,11,related_to,10,0.8,about my approach and this problem,{}
+7,relation,12,related_to,10,0.7,about my approach and this problem,{}
+8,relation,13,will_perform_instruction,15,0.9,,{}
+9,relation,14,waiting_for_permission,16,0.8,,{}

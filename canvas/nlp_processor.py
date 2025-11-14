@@ -31,7 +31,7 @@ def nlp_process_entities(entities: list[Entity], input_text_file_path: str, open
         logging.info(f"Processed Entity: '{original_name}' to '{selected_chunk}'")
         processed_entities.append(entity)
 
-    dir = Path("./data/output/")/Path(input_text_file_path).stem
+    dir = Path("./data/output/")/Path(input_text_file_path).stem/Path("nlp_processed_entities")
 
     if openai_model:
         dir = dir / openai_model

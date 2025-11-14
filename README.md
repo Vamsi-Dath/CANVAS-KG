@@ -27,7 +27,9 @@ python run.py \
     --output_file_name output.csv \
     --entity_bank_json_path ./data/Entity_Bank.json \
     --system_prompt_template_path ./prompts/system_prompt_template.txt \
+    --relationship_extraction_template_path ./prompts/relationship_extraction_template.txt \
     --openai_model gpt-4
+    --local_model llama3.1:
 ```
 
 ## Development Timeline

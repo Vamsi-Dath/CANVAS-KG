@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 import openai
 from pathlib import Path
 from schema.entity import Entity
+from schema.relation import Relation
 
 logging.basicConfig(level=logging.DEBUG)
 load_dotenv()
@@ -73,10 +74,18 @@ def validate_entity(entity_json: str) -> Entity:
         logging.error(f"Validation error: {e}")
         raise
 
+def validate_relation(relation_json: str) -> Relation:
+    try:
+        relation = Relation.model_validate_json(relation_json)
+        logging.debug(f"Validated Relation: {relation}")
+        return relation
+    except Exception as e:
+        logging.error(f"Validation error: {e}")
+        raise
+
 def save_e_to_csv(output_dir: str, output_file_name: str, entities: list[Entity]) -> None:
     Path(output_dir).mkdir(parents=True, exist_ok=True)
     output_file_path = Path(output_dir)/output_file_name
-    file_exists = output_file_path.is_file()
     try:
         with open(output_file_path, mode='w+', newline='', encoding='utf-8') as f:
             fieldnames = Entity.model_fields.keys()
@@ -91,7 +100,24 @@ def save_e_to_csv(output_dir: str, output_file_name: str, entities: list[Entity]
         logging.error(f"Error saving to {output_file_path}: {e}")
         raise
 
-def remove_duplicates_from_e_csv(input_file_path: str, output_file_path: str) -> None:
+def save_r_to_csv(output_dir: str, output_file_name: str, relations: list[Relation]) -> None:
+    Path(output_dir).mkdir(parents=True, exist_ok=True)
+    output_file_path = Path(output_dir)/output_file_name
+    try:
+        with open(output_file_path, mode='w+', newline='', encoding='utf-8') as f:
+            fieldnames = Relation.model_fields.keys()
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
+            for id, relation in enumerate(relations):
+                relation_dict = relation.model_dump()
+                relation_dict['id'] = id
+                writer.writerow(relation_dict)
+        logging.info(f"Relations: {len(relations)} saved to {output_file_path}")
+    except Exception as e:
+        logging.error(f"Error saving to {output_file_path}: {e}")
+        raise
+
+def remove_duplicates_from_e_csv(input_file_path: Path, output_file_path: Path) -> None:
     try:
         unique_entities = {}
         with open(input_file_path, mode='r', encoding='utf-8') as f:
@@ -109,6 +135,29 @@ def remove_duplicates_from_e_csv(input_file_path: str, output_file_path: str) ->
                 entity['idx'] = idx
                 writer.writerow(entity)
         logging.info(f"Removed duplicates, no. of unique entities: {len(unique_entities)}")
+
+    except Exception as e:
+        logging.error(f"Error removing duplicates from {input_file_path} to {output_file_path}: {e}")
+        raise
+
+def remove_duplicates_from_r_csv(input_file_path: Path, output_file_path: Path) -> None:
+    try:
+        unique_relations = {}
+        with open(input_file_path, mode='r', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                key = (row['subject_entity_id'], row['object_entity_id'], row['predicate'].lower())
+                if key not in unique_relations:
+                    unique_relations[key] = row
+            
+        with open(output_file_path, mode='w+', newline='', encoding='utf-8') as f:
+            fieldnames = Relation.model_fields.keys()
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
+            for id, relation in enumerate(unique_relations.values()):
+                relation['id'] = id
+                writer.writerow(relation)
+        logging.info(f"Removed duplicates, no. of unique relations: {len(unique_relations)}")
 
     except Exception as e:
         logging.error(f"Error removing duplicates from {input_file_path} to {output_file_path}: {e}")
