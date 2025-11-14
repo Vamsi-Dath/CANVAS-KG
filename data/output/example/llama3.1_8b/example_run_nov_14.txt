@@ -1,0 +1,30 @@
+(venv) vamsidath@Vamsis-Mac-mini CANVAS-KG % python run.py \
+    --input_text_file_path ./data/input/example.txt \
+    --output_dir ./data/output/
+/Volumes/X10 Pro/CANVAS-KG/CANVAS-KG/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:canvas.canvas_framework:Intializing CanvasKG
+INFO:canvas.canvas_framework:Input text file path set to: ./data/input/example.txt
+INFO:canvas.canvas_framework:Output directory set to: ./data/output/
+INFO:canvas.canvas_framework:Entity bank JSON path set to: ./data/Entity_Bank.json
+INFO:canvas.canvas_framework:System prompt template path set to: ./prompts/system_prompt_template.txt
+INFO:canvas.canvas_framework:OpenAI model set to: None
+WARNING:canvas.canvas_framework:No OpenAI model specified. Local on-device model (llama3.1:8b) will be used.
+INFO:canvas.canvas_framework:
+        CanvasKG run starts...
+
+INFO:canvas.extract:File run status: Completed
+INFO:root:      Extracted entities count: 8
+INFO:root:Total validated entities count: 8
+
+INFO:root:Entities: 8 saved to data/output/example/llama3.1_8b/output.csv
+INFO:root:Removed duplicates, no. of unique entities: 8
+INFO:root:Processed Entity: 'Written on 29-09-2025' to 'Written on 29-09-2025'
+INFO:root:Processed Entity: 'Project kickoff agenda' to 'Project kickoff agenda'
+INFO:root:Processed Entity: 'Hazardous weather simulation' to 'Hazardous weather simulation'
+INFO:root:Processed Entity: 'Meeting with domain experts' to 'domain experts'
+INFO:root:Processed Entity: 'Project proposal abstract' to 'Project proposal abstract'
+INFO:root:Entities: 8 saved to data/output/example/llama3.1_8b/nlp_processed_entities.csv
+INFO:root:Removed duplicates, no. of unique entities: 8
+INFO:canvas.canvas_framework:
+        CanvasKG run ends.

@@ -1,11 +1,13 @@
+from pathlib import Path
 import spacy
 import logging
 from utils.helper import remove_duplicates_from_e_csv, save_e_to_csv
+from schema.entity import Entity
 
 logging.basicConfig(level=logging.DEBUG)
 nlp = spacy.load("en_core_web_md")
 
-def nlp_process_entities(entities):
+def nlp_process_entities(entities: list[Entity], input_text_file_path: str, openai_model=None ) -> list[Entity]:
     processed_entities = []
     for entity in entities:
         if len(entity.name.split()) < 3:
@@ -29,9 +31,17 @@ def nlp_process_entities(entities):
         logging.info(f"Processed Entity: '{original_name}' to '{selected_chunk}'")
         processed_entities.append(entity)
 
-    save_e_to_csv("./data/output/", "nlp_processed_entities.csv", processed_entities)
+    dir = Path("./data/output/")/Path(input_text_file_path).stem
+
+    if openai_model:
+        dir = dir / openai_model
+    else:
+        dir = dir / "llama3.1_8b"
+
+    dir.mkdir(parents=True, exist_ok=True)
+    save_e_to_csv(dir, "nlp_processed_entities.csv", processed_entities)
     remove_duplicates_from_e_csv(
-        "./data/output/nlp_processed_entities.csv",
-        "./data/output/nlp_processed_entities_dedup.csv"
+        dir / "nlp_processed_entities.csv",
+        dir / "nlp_processed_entities_dedup.csv"
     )
     return processed_entities

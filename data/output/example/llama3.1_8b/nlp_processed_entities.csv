@@ -1,0 +1,9 @@
+idx,name,category,type,confidence,description,properties
+0,Week 1,Event,Development,0.9,,{}
+1,Written on 29-09-2025,Event,Outcome,0.8,,"{'original_name': 'Written on 29-09-2025', 'noun_chunks': []}"
+2,Project kickoff agenda,Concept,Agenda,0.7,,"{'original_name': 'Project kickoff agenda', 'noun_chunks': ['Project kickoff agenda']}"
+3,Documentation instructions,Concept,Instruction,0.6,,{}
+4,Simulation algorithm,Concept,Solution,0.5,,{}
+5,Hazardous weather simulation,Event,Problem,0.4,,"{'original_name': 'Hazardous weather simulation', 'noun_chunks': ['Hazardous weather simulation']}"
+6,domain experts,Event,Task,0.3,,"{'original_name': 'Meeting with domain experts', 'noun_chunks': ['domain experts']}"
+7,Project proposal abstract,Concept,Instruction,0.2,,"{'original_name': 'Project proposal abstract', 'noun_chunks': ['Project proposal abstract']}"

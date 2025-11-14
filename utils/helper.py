@@ -2,10 +2,14 @@ import subprocess
 import time
 import logging
 import csv
+import os
+from dotenv import load_dotenv
+import openai
 from pathlib import Path
 from schema.entity import Entity
 
 logging.basicConfig(level=logging.DEBUG)
+load_dotenv()
 
 def run_ollama(model:str, system_prompt:str, user_prompt:str, max_tries=10, timeout=300) -> str:
     if system_prompt:
@@ -39,6 +43,26 @@ def run_ollama(model:str, system_prompt:str, user_prompt:str, max_tries=10, time
     
     logging.debug(f"Model: {model}\n""Prompt:\n {user_prompt}\n""Result: {response}\n")
     return response
+
+def openai_chat_completion(model: str, system_prompt: str, user_prompt: str, temperature=0, max_tokens=512, max_tries=10) -> str:
+    openai.api_key = os.getenv("OPENAI_KEY")
+    response = None
+    if system_prompt is not None:
+        messages = [{"role": "system", "content": system_prompt}] + user_prompt
+    else:
+        messages = user_prompt
+    while response is None and max_tries > 0:
+        max_tries -= 1
+        try:
+            response = openai.chat.completions.create(
+                model=model, messages=messages, temperature=temperature, max_tokens=max_tokens
+            )
+        except Exception as e:
+            logging.warning(f"Ollama Error: {e}. Re-run in 5 seconds... Attempts left: {max_tries}")
+            time.sleep(5)
+    logging.debug(f"Model: {model}\nPrompt:\n {messages}\n Result: {response.choices[0].message.content}")
+    return response.choices[0].message.content
+
 
 def validate_entity(entity_json: str) -> Entity:
     try:

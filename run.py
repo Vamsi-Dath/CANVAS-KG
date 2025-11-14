@@ -33,6 +33,12 @@ if __name__ == "__main__":
         type = str,
         help = "Path to the system prompt template file."
     )
+    parser.add_argument(
+        "--openai_model",
+        default = None,
+        type = str,
+        help = "OpenAI model to use for processing."
+    )
     args = parser.parse_args()
     args = vars(args)
     canvas_kg = CanvasKG(**args)

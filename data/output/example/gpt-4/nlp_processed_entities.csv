@@ -1,0 +1,15 @@
+idx,name,category,type,confidence,description,properties
+0,Week,Concept,Time_Component,1.0,,"{'original_name': 'Week 1 (22-9-2025 - 29-09-2025)', 'noun_chunks': ['Week']}"
+1,Documentation,Artifact,Documentation,1.0,,{}
+2,Scope,Concept,Scope,1.0,,{}
+3,Knowledge Graph,Concept,Technical_Concept,1.0,,{}
+4,Simulation,Event,Simulation,1.0,,{}
+5,Algorithm,Artifact,Algorithm,1.0,,{}
+6,Domain Experts,Person,Domain_Expert,1.0,,{}
+7,Project Definition Template,Artifact,Template,1.0,,"{'original_name': 'Project Definition Template', 'noun_chunks': ['Project Definition Template']}"
+8,Task Abstraction Template,Artifact,Template,1.0,,"{'original_name': 'Task Abstraction Template', 'noun_chunks': ['Task Abstraction Template']}"
+9,Executive Slide,Artifact,Presentation,1.0,,{}
+10,Project Proposal,Artifact,Proposal,1.0,,{}
+11,Data Modelling,Artifact,Data_Model,1.0,,{}
+12,Frontend,Artifact,Web_Component,1.0,,{}
+13,Project Timeline,Concept,Timeline,1.0,,{}

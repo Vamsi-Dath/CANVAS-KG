@@ -1,0 +1,9 @@
+idx,name,category,type,confidence,description,properties
+0,Week 1,Event,Development,0.9,,{}
+1,Written on 29-09-2025,Event,Outcome,0.8,,{}
+2,Project kickoff agenda,Concept,Agenda,0.7,,{}
+3,Documentation instructions,Concept,Instruction,0.6,,{}
+4,Simulation algorithm,Concept,Solution,0.5,,{}
+5,Hazardous weather simulation,Event,Problem,0.4,,{}
+6,Meeting with domain experts,Event,Task,0.3,,{}
+7,Project proposal abstract,Concept,Instruction,0.2,,{}
