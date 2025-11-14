@@ -1,0 +1,177 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 1000px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#1f77b4", "font": {"color": "#000000"}, "id": 0, "label": "Week 1", "shape": "dot", "title": "Concept / Timeline"}, {"color": "#1f77b4", "font": {"color": "#000000"}, "id": 1, "label": "22-9-2025 - 29-09-2025", "shape": "dot", "title": "Concept / Time_Component"}, {"color": "#ff7f0e", "font": {"color": "#000000"}, "id": 2, "label": "documentation", "shape": "square", "title": "Artifact / Documentation"}, {"color": "#1f77b4", "font": {"color": "#000000"}, "id": 3, "label": "instructions", "shape": "dot", "title": "Concept / Instruction"}, {"color": "#1f77b4", "font": {"color": "#000000"}, "id": 4, "label": "project", "shape": "dot", "title": "Concept / Domain_Concept"}, {"color": "#1f77b4", "font": {"color": "#000000"}, "id": 5, "label": "scope", "shape": "dot", "title": "Concept / Scope"}, {"color": "#1f77b4", "font": {"color": "#000000"}, "id": 6, "label": "research questions", "shape": "dot", "title": "Concept / Domain_Concept"}, {"color": "#ff7f0e", "font": {"color": "#000000"}, "id": 7, "label": "visualization", "shape": "square", "title": "Artifact / Visualization"}, {"color": "#ff7f0e", "font": {"color": "#000000"}, "id": 8, "label": "knowledge graph", "shape": "square", "title": "Artifact / Data_Model"}, {"color": "#2ca02c", "font": {"color": "#000000"}, "id": 9, "label": "Vamsi", "shape": "triangle", "title": "Person / Computer_Expert"}, {"color": "#d62728", "font": {"color": "#000000"}, "id": 10, "label": "simulation", "shape": "diamond", "title": "Event / Simulation"}, {"color": "#1f77b4", "font": {"color": "#000000"}, "id": 11, "label": "hazardous weather", "shape": "dot", "title": "Concept / Weather_Event"}, {"color": "#2ca02c", "font": {"color": "#000000"}, "id": 12, "label": "driver", "shape": "triangle", "title": "Person / Data_Subject"}, {"color": "#ff7f0e", "font": {"color": "#000000"}, "id": 13, "label": "algorithm", "shape": "square", "title": "Artifact / Algorithm"}, {"color": "#2ca02c", "font": {"color": "#000000"}, "id": 14, "label": "domain experts", "shape": "triangle", "title": "Person / Domain_Expert"}, {"color": "#ff7f0e", "font": {"color": "#000000"}, "id": 15, "label": "project definition template", "shape": "square", "title": "Artifact / Template"}, {"color": "#ff7f0e", "font": {"color": "#000000"}, "id": 16, "label": "task abstraction template", "shape": "square", "title": "Artifact / Template"}, {"color": "#d62728", "font": {"color": "#000000"}, "id": 17, "label": "meeting", "shape": "diamond", "title": "Event / Offline_Meeting"}, {"color": "#ff7f0e", "font": {"color": "#000000"}, "id": 18, "label": "data", "shape": "square", "title": "Artifact / Data"}, {"color": "#ff7f0e", "font": {"color": "#000000"}, "id": 19, "label": "executive slide", "shape": "square", "title": "Artifact / Presentation"}, {"color": "#1f77b4", "font": {"color": "#000000"}, "id": 20, "label": "15 minutes", "shape": "dot", "title": "Concept / Time_Component"}, {"color": "#1f77b4", "font": {"color": "#000000"}, "id": 21, "label": "30 minutes", "shape": "dot", "title": "Concept / Time_Component"}, {"color": "#ff7f0e", "font": {"color": "#000000"}, "id": 22, "label": "project proposal", "shape": "square", "title": "Artifact / Proposal"}, {"color": "#1f77b4", "font": {"color": "#000000"}, "id": 23, "label": "tasks", "shape": "dot", "title": "Concept / Task"}, {"color": "#ff7f0e", "font": {"color": "#000000"}, "id": 24, "label": "data modelling", "shape": "square", "title": "Artifact / Data_Model"}, {"color": "#ff7f0e", "font": {"color": "#000000"}, "id": 25, "label": "frontend", "shape": "square", "title": "Artifact / Web_Component"}, {"color": "#1f77b4", "font": {"color": "#000000"}, "id": 26, "label": "project timeline", "shape": "dot", "title": "Concept / Timeline"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "from": 0, "label": "represents_time_period", "title": "represents_time_period", "to": 1}, {"arrows": "to", "from": 2, "label": "related_to", "title": "related_to", "to": 4}, {"arrows": "to", "from": 4, "label": "has_scope", "title": "has_scope", "to": 5}, {"arrows": "to", "from": 4, "label": "has_research_questions", "title": "has_research_questions", "to": 6}, {"arrows": "to", "from": 4, "label": "has_visualization", "title": "has_visualization", "to": 7}, {"arrows": "to", "from": 9, "label": "developing", "title": "developing", "to": 8}, {"arrows": "to", "from": 4, "label": "has_simulation", "title": "has_simulation", "to": 10}, {"arrows": "to", "from": 10, "label": "related_to", "title": "related_to", "to": 11}, {"arrows": "to", "from": 10, "label": "related_to", "title": "related_to", "to": 12}, {"arrows": "to", "from": 10, "label": "uses_algorithm", "title": "uses_algorithm", "to": 13}, {"arrows": "to", "from": 4, "label": "interacts_with", "title": "interacts_with", "to": 14}, {"arrows": "to", "from": 4, "label": "uses_template", "title": "uses_template", "to": 15}, {"arrows": "to", "from": 4, "label": "uses_template", "title": "uses_template", "to": 16}, {"arrows": "to", "from": 17, "label": "involves", "title": "involves", "to": 14}, {"arrows": "to", "from": 14, "label": "requires_data", "title": "requires_data", "to": 18}, {"arrows": "to", "from": 19, "label": "has_duration", "title": "has_duration", "to": 20}, {"arrows": "to", "from": 17, "label": "has_duration", "title": "has_duration", "to": 21}, {"arrows": "to", "from": 4, "label": "has_project_proposal", "title": "has_project_proposal", "to": 22}, {"arrows": "to", "from": 4, "label": "has_tasks", "title": "has_tasks", "to": 23}, {"arrows": "to", "from": 4, "label": "requires_data_modelling", "title": "requires_data_modelling", "to": 24}, {"arrows": "to", "from": 4, "label": "has_frontend", "title": "has_frontend", "to": 25}, {"arrows": "to", "from": 4, "label": "has_project_timeline", "title": "has_project_timeline", "to": 26}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    
+<!-- Legend injected by script -->
+<div id="pyvis-legend" style="
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: rgba(255,255,255,0.95);
+    border: 1px solid rgba(0,0,0,0.12);
+    padding: 10px 12px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    z-index: 9999;
+    font-family: Arial, Helvetica, sans-serif;
+">
+  <div style="font-weight:600;margin-bottom:6px;font-size:14px;color:#111">Legend — Categories → Shapes & Colors</div>
+  <div style="display:flex;align-items:center;gap:8px;margin:6px 0;"><svg width="18" height="18"><circle cx="9" cy="9" r="6" fill="#1f77b4"/></svg><span style="font-size:13px;color:#222">Concept</span></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0;"><svg width="18" height="18"><rect x="3" y="3" width="12" height="12" fill="#ff7f0e"/></svg><span style="font-size:13px;color:#222">Artifact</span></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0;"><svg width="18" height="18"><polygon points="9,3 17,15 1,15" fill="#2ca02c"/></svg><span style="font-size:13px;color:#222">Person</span></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0;"><svg width="18" height="18"><polygon points="9,1 17,9 9,17 1,9" fill="#d62728"/></svg><span style="font-size:13px;color:#222">Event</span></div>
+
+</div>
+<!-- End legend -->
+</body>
+</html>
