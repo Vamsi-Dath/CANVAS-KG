@@ -1,0 +1,68 @@
+(venv) vamsidath@Vamsis-Mac-mini CANVAS-KG % python run.py \
+    --input_text_file_path ./data/input/example.txt \
+    --output_dir ./data/output/
+/Volumes/X10 Pro/CANVAS-KG/CANVAS-KG/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:canvas.canvas_framework:Intializing CanvasKG
+INFO:canvas.canvas_framework:Input text file path set to: ./data/input/example.txt
+INFO:canvas.canvas_framework:Output directory set to: ./data/output/
+INFO:canvas.canvas_framework:Entity bank JSON path set to: ./data/Entity_Bank.json
+INFO:canvas.canvas_framework:System prompt template path set to: ./prompts/system_prompt_template.txt
+INFO:canvas.canvas_framework:
+        CanvasKG run starts...
+
+INFO:canvas.extract:Line 0 run status: Completed
+INFO:root:      Line 0 extracted entities count: 3
+INFO:canvas.extract:Line 1 skipped: Empty line.
+INFO:canvas.extract:Line 2 run status: Completed
+INFO:root:      Line 2 extracted entities count: 4
+INFO:canvas.extract:Line 3 skipped: Empty line.
+INFO:canvas.extract:Line 4 run status: Completed
+INFO:root:      Line 4 extracted entities count: 3
+INFO:canvas.extract:Line 5 run status: Completed
+INFO:root:      Line 5 extracted entities count: 5
+INFO:canvas.extract:Line 6 skipped: Empty line.
+INFO:canvas.extract:Line 7 run status: Completed
+INFO:root:      Line 7 extracted entities count: 3
+INFO:canvas.extract:Line 8 run status: Completed
+INFO:root:      Line 8 extracted entities count: 2
+INFO:canvas.extract:Line 9 skipped: Empty line.
+INFO:canvas.extract:Line 10 run status: Completed
+INFO:root:      Line 10 extracted entities count: 4
+INFO:canvas.extract:Line 11 run status: Completed
+INFO:root:      Line 11 extracted entities count: 4
+INFO:canvas.extract:Line 12 run status: Completed
+INFO:root:      Line 12 extracted entities count: 5
+INFO:canvas.extract:Line 13 skipped: Empty line.
+INFO:canvas.extract:Line 14 run status: Completed
+INFO:root:      Line 14 extracted entities count: 4
+INFO:canvas.extract:Line 15 run status: Completed
+INFO:root:      Line 15 extracted entities count: 8
+INFO:canvas.extract:Line 16 run status: Completed
+INFO:root:      Line 16 extracted entities count: 3
+INFO:canvas.extract:Line 17 skipped: Empty line.
+INFO:canvas.extract:Line 18 run status: Completed
+INFO:root:      Line 18 extracted entities count: 2
+INFO:canvas.extract:Line 19 skipped: Empty line.
+INFO:canvas.extract:Line 20 run status: Completed
+INFO:root:      Line 20 extracted entities count: 4
+INFO:canvas.extract:Line 21 run status: Completed
+INFO:root:      Line 21 extracted entities count: 2
+INFO:root:Total validated entities count: 56
+
+INFO:root:Entities: 56 saved to data/output/output.csv
+INFO:root:Removed duplicates, no. of unique entities: 51
+INFO:root:Processed Entity: 'start of the project' to 'start'
+INFO:root:Processed Entity: 'basis to get to know what the project is going to be.' to 'basis'
+INFO:root:Processed Entity: 'the visualization that Im building' to 'that'
+INFO:root:Processed Entity: 'Dr. Ashish Sharma' to 'Dr. Ashish Sharma'
+INFO:root:Processed Entity: 'at the same time' to 'the same time'
+INFO:root:Processed Entity: 'simulation to calculate whether at any point for any given route hazardous weather is going to exist at the same time as a driver passes' to 'simulation'
+INFO:root:Processed Entity: 'project definition template' to 'project definition template'
+INFO:root:Processed Entity: 'task abstraction template' to 'task abstraction template'
+INFO:root:Processed Entity: 'the first meeting we had' to 'the first meeting'
+INFO:root:Processed Entity: 'Tasks to be done for the project' to 'Tasks'
+INFO:root:Entities: 56 saved to data/output/nlp_processed_entities.csv
+INFO:root:Removed duplicates, no. of unique entities: 51
+INFO:canvas.canvas_framework:
+        CanvasKG run ends.

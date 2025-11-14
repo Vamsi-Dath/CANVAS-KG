@@ -13,6 +13,12 @@ git submodule update --init --recursive --remote
 pip install -r requirements.txt
 ```
 
+## spaCy for Entity name shortening
+```
+pip install spacy
+python -m spacy download en_core_web_md
+```
+
 ## Usage Instructions
 ```
 python run.py \

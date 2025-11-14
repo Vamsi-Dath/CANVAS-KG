@@ -4,8 +4,8 @@ idx,name,category,type,confidence,description,properties
 2,29-09-2025,Concept,Time_Component,1.0,,{}
 3,This week,Event,Period,1.0,,{}
 4,the project,Artifact,Concept,1.0,A visual analytics tool or system,{}
-5,start of the project,Event,Development,1.0,,{}
-6,basis to get to know what the project is going to be.,Concept,Agenda,1.0,,{}
+5,start,Event,Development,1.0,,"{'original_name': 'start of the project', 'noun_chunks': ['start', 'the project']}"
+6,basis,Concept,Agenda,1.0,,"{'original_name': 'basis to get to know what the project is going to be.', 'noun_chunks': ['basis', 'what', 'the project']}"
 7,instructions,Artifact,Documentation,0.9,,{}
 8,documentation,Artifact,Documentation,0.8,,{}
 9,week,Concept,Time_Component,0.7,,{}
@@ -13,24 +13,24 @@ idx,name,category,type,confidence,description,properties
 11,achieve,Concept,Expectation,0.7,,{}
 12,scope,Concept,Scope,0.9,,{}
 13,research questions,Concept,Problem,0.6,,{}
-14,the visualization that Im building,Artifact,Software,0.95,,{}
+14,that,Artifact,Software,0.95,,"{'original_name': 'the visualization that Im building', 'noun_chunks': ['the visualization', 'that', 'I']}"
 15,Knowledge Graph,Artifact,Data_Model,1.0,,{}
 16,Visualization Colaboration,Event,Development,1.0,,{}
 17,Vamsi,Person,Computer_Expert,1.0,,{}
 18,Kirill Makienko,Person,Computer_Expert,0.8,,{}
-19,Dr. Ashish Sharma,Person,Domain_Expert,0.9,,{}
+19,Dr. Ashish Sharma,Person,Domain_Expert,0.9,,"{'original_name': 'Dr. Ashish Sharma', 'noun_chunks': ['Dr. Ashish Sharma']}"
 20,hazardous weather,Concept,Weather_Event,0.9,,{}
 21,driver passes,Concept,Location,0.8,,{}
-22,at the same time,Concept,Time_Component,0.7,,{}
-23,simulation to calculate whether at any point for any given route hazardous weather is going to exist at the same time as a driver passes,Concept,Simulation,0.6,,{}
+22,the same time,Concept,Time_Component,0.7,,"{'original_name': 'at the same time', 'noun_chunks': ['the same time']}"
+23,simulation,Concept,Simulation,0.6,,"{'original_name': 'simulation to calculate whether at any point for any given route hazardous weather is going to exist at the same time as a driver passes', 'noun_chunks': ['simulation', 'any point', 'any given route hazardous weather', 'the same time', 'a driver']}"
 24,algorithm,Artifact,Algorithm,1.0,,{}
 25,domain experts,Person,Stakeholder,1.0,,{}
 26,documentation,Artifact,Documentation,1.0,,{}
 27,research questions,Concept,Problem,1.0,,{}
 28,documents,Artifact,Report,0.8,,{}
 29,corrections,Concept,Problem,0.7,,{}
-30,project definition template,Artifact,Proposal,0.9,,{}
-31,task abstraction template,Artifact,Documentation,0.8,,{}
+30,project definition template,Artifact,Proposal,0.9,,"{'original_name': 'project definition template', 'noun_chunks': ['project definition template']}"
+31,task abstraction template,Artifact,Documentation,0.8,,"{'original_name': 'task abstraction template', 'noun_chunks': ['task abstraction template']}"
 32,next week,Concept,Timeline,0.7,,{}
 33,Domain_Expert,Person,Domain_Expert,0.95,,{}
 34,Meeting,Event,Offline_Meeting,0.88,,{}
@@ -45,10 +45,10 @@ idx,name,category,type,confidence,description,properties
 43,Timeframe,Concept,Time_Component,0.9,An element related to the measurement or consideration of time within the design study.,{}
 44,15 minutes,Concept,Time_Component,0.9,An element related to the measurement or consideration of time within the design study.,{}
 45,Domain Experts,Person,Domain_Expert,0.9,,{}
-46,the first meeting we had,Event,Offline_Meeting,0.8,approximation based on context,{}
+46,the first meeting,Event,Offline_Meeting,0.8,approximation based on context,"{'original_name': 'the first meeting we had', 'noun_chunks': ['the first meeting', 'we']}"
 47,30 minutes,Concept,Time_Component,0.7,,{}
 48,Project Proposal,Artifact,Proposal,1.0,,{}
-49,Tasks to be done for the project,Concept,Task,0.8,Identified activities or objectives in the design study.,{}
+49,Tasks,Concept,Task,0.8,Identified activities or objectives in the design study.,"{'original_name': 'Tasks to be done for the project', 'noun_chunks': ['Tasks', 'the project']}"
 50,domain experts,Person,Domain_Expert,1.0,,{}
 51,data modelling,Concept,Design_Concept,1.0,A process for creating a conceptual representation of data.,{}
 52,meeting,Event,Offline_Meeting,0.9,,{}

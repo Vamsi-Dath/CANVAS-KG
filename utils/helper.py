@@ -54,34 +54,35 @@ def save_e_to_csv(output_dir: str, output_file_name: str, entities: list[Entity]
     output_file_path = Path(output_dir)/output_file_name
     file_exists = output_file_path.is_file()
     try:
-        with open(output_file_path, mode='a', newline='', encoding='utf-8') as f:
+        with open(output_file_path, mode='w+', newline='', encoding='utf-8') as f:
             fieldnames = Entity.model_fields.keys()
             writer = csv.DictWriter(f, fieldnames=fieldnames)
-            if not file_exists:
-                writer.writeheader()
-            for entity in entities:
-                writer.writerow(entity.model_dump())
+            writer.writeheader()
+            for idx, entity in enumerate(entities):
+                entity_dict = entity.model_dump()
+                entity_dict['idx'] = idx
+                writer.writerow(entity_dict)
         logging.info(f"Entities: {len(entities)} saved to {output_file_path}")
     except Exception as e:
         logging.error(f"Error saving to {output_file_path}: {e}")
         raise
 
 def remove_duplicates_from_e_csv(input_file_path: str, output_file_path: str) -> None:
-    #convert everything to lowercase for comparison
     try:
         unique_entities = {}
         with open(input_file_path, mode='r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
             for row in reader:
-                key = (row['name'].lower(), row['type'].lower())
+                key = (row['name'].lower(), row['category'].lower(), row['type'].lower())
                 if key not in unique_entities:
                     unique_entities[key] = row
             
-        with open(output_file_path, mode='w', newline='', encoding='utf-8') as f:
-            fieldnames = ['idx', 'name', 'type', 'confidence', 'description', 'properties']
+        with open(output_file_path, mode='w+', newline='', encoding='utf-8') as f:
+            fieldnames = Entity.model_fields.keys()
             writer = csv.DictWriter(f, fieldnames=fieldnames)
             writer.writeheader()
-            for entity in unique_entities.values():
+            for idx, entity in enumerate(unique_entities.values()):
+                entity['idx'] = idx
                 writer.writerow(entity)
         logging.info(f"Removed duplicates, no. of unique entities: {len(unique_entities)}")
 

@@ -15,6 +15,24 @@ if __name__ == "__main__":
         type = str,
         help = "Directory to save the extracted KG."
     )
+    parser.add_argument(
+        "--output_file_name",
+        default = "output.csv",
+        type = str,
+        help = "File to which the extracted entities are saved."
+    )
+    parser.add_argument(
+        "--entity_bank_json_path",
+        default = "./data/Entity_Bank.json",
+        type = str,
+        help = "Path to the entity bank JSON file."
+    )
+    parser.add_argument(
+        "--system_prompt_template_path",
+        default = "./prompts/system_prompt_template.txt",
+        type = str,
+        help = "Path to the system prompt template file."
+    )
     args = parser.parse_args()
     args = vars(args)
     canvas_kg = CanvasKG(**args)
