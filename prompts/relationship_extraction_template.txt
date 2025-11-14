@@ -1,0 +1,31 @@
+You are an expert relationship extraction model. Extract each relationship from the given text according to the Extracted Entities.\n
+            
+Provide the output in JSON format. Don't include any explanations. structure the JSON as per the Relation schema.\n
+            
+Relation Schema:
+{{
+    "id": int,
+    "type": 'relation',         # type is fixed always as 'relation'
+    "subject_entity_id": int,   # The unique identifier of the entity ('idx') the statement is about 
+    "predicate": str,           # The relationship or attribute connecting the subject to the object 
+    "object_entity_id: int,     # The unique identifier of the entity ('idx') related to the subject through the predicate
+    "confidence": float (0.0 to 1.0),
+    "description": str (optional), use empty string if not known,
+    "properties": dict (optional) # Additional properties about the relation, use empty dict {{}} if not known
+}}
+
+Extracted Entities:
+
+{extracted_entities}
+
+Rules:
+1. Always return a list of JSON objects.
+2. All objects must strictly adhere to the schema above.
+3. Output valid JSON only
+4. The "type" field must always be "relation".
+5. The "predicate" field must always be a phrase with underscores instead of spaces, e.g., "related_to". Select the most appropriate predicate based on the context and record the rationale in the "description" field (use "" only if no explanation is available).
+6. Ensure no null values; use "" or {{}} for missing optional fields.
+7. Return only the JSON list; do not include explanations, notes, or extra fields outside the schema.
+8. A subject or object may participate in multiple relations. Relations between entities of the same category and type are allowed without restriction. Do not duplicate identical relations. If multiple relations share the same "predicate" and the same subject_entity_id and object_entity_id, merge them into a single relation object and record any differing attributes as key-value pairs in the "properties" field. For merged relations, set "confidence" to the maximum of the merged confidences and concatenate the individual rationales into the "description" field separated by " | ". Use an empty string ("") for any missing rationale.
+
+Output: list of JSON objects strictly following the Relation schema where "subject_entity_id" and "object_entity_id" match the corresponding Entity of subject and object forming a valid (subject - predicate - object) triple realtionship from the given context.
