@@ -5,7 +5,7 @@ Visualization framework for capturing Collaborative Authoring in Urban Visual An
 ```
 git clone https://github.com/Vamsi-Dath/CANVAS-KG.git
 cd CANVAS-KG
-git submodule update --init --recursive
+git submodule update --init --recursive --remote
 ```
 
 ## Install Dependencies
