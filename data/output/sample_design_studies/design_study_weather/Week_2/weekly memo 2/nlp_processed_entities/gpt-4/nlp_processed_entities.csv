@@ -1,0 +1,10 @@
+idx,name,category,type,valid_start_time,valid_end_time,confidence,description,properties
+0,This week,Concept,Time_Component,2025-10-05 18:00:00,2099-12-31 23:59:59,1.0,,{}
+1,meeting,Event,Offline_Meeting,2025-10-05 18:00:00,2099-12-31 23:59:59,1.0,,{}
+2,Carolina,Person,Domain_Expert,2025-10-05 18:00:00,2099-12-31 23:59:59,0.7,Assumed as a domain expert as she is handling and presenting data for the project.,{}
+3,data,Artifact,Data,2025-10-05 18:00:00,2099-12-31 23:59:59,1.0,,{}
+4,project,Concept,Task,2025-10-05 18:00:00,2099-12-31 23:59:59,1.0,,{}
+5,Carolina’s review,Event,Inference,2025-10-05 18:00:00,2099-12-31 23:59:59,0.8,Assuming that Carolina's review of the Project Proposal is an event where conclusions or insights are drawn.,"{'original_name': 'Carolina’s review of the Project Proposal', 'noun_chunks': ['Carolina’s review', 'the Project Proposal']}"
+6,Project Proposal,Artifact,Proposal,2025-10-05 18:00:00,2099-12-31 23:59:59,1.0,,{}
+7,NetCDF files,Artifact,Data,2025-10-05 18:00:00,2099-12-31 23:59:59,1.0,,{}
+8,Drive,Artifact,Software,2025-10-05 18:00:00,2099-12-31 23:59:59,0.6,"Assuming that Drive refers to Google Drive, a software for storing and sharing files",{}

@@ -1,0 +1,11 @@
+id,type,subject_entity_id,predicate,object_entity_id,valid_start_time,valid_end_time,confidence,description,properties
+0,relation,2,communicated_via,3,2025-11-16 18:00:00,2099-12-31 23:59:59,0.9,Vamsi communicated via Discord,{}
+1,relation,0,collected_for,1,2025-11-16 18:00:00,2099-12-31 23:59:59,0.925,Usability feedback was collected for the dashboard,{}
+2,relation,5,performed,6,2025-11-16 18:00:00,2099-12-31 23:59:59,0.9,Carolina performed the testing of the dashboard,{}
+3,relation,0,collected_through,4,2025-11-16 18:00:00,2099-12-31 23:59:59,0.925,Usability feedback was collected through email feedback,{}
+4,relation,10,contains,12,2025-11-16 18:00:00,2099-12-31 23:59:59,0.9,ROC tab charts contains a dotted line,{}
+5,relation,10,translated_to,11,2025-11-16 18:00:00,2099-12-31 23:59:59,0.9,The legends in the ROC tab charts were translated from Portuguese to English,{}
+6,relation,1,implemented_with,14,2025-11-16 18:00:00,2099-12-31 23:59:59,0.9,The dashboard was implemented with the rainfall limit filter,{}
+7,relation,2,shared_with,5,2025-11-16 18:00:00,2099-12-31 23:59:59,0.9,Vamsi shared a form with Carolina,{}
+8,relation,2,shared_with,15,2025-11-16 18:00:00,2099-12-31 23:59:59,0.9,Vamsi shared a form with Daniel,{}
+9,relation,2,shared_with,16,2025-11-16 18:00:00,2099-12-31 23:59:59,0.9,Vamsi shared a form with Marcos,{}

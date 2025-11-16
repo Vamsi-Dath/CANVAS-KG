@@ -1,0 +1,7 @@
+id,type,subject_entity_id,predicate,object_entity_id,valid_start_time,valid_end_time,confidence,description,properties
+0,relation,1,occurs_within,0,2025-10-05 18:00:00,2099-12-31 23:59:59,1.0,The meeting happened within 'this week'.,{}
+1,relation,2,presents,3,2025-10-05 18:00:00,2099-12-31 23:59:59,1.0,Carolina presented the data at the meeting.,{}
+2,relation,3,used_for,4,2025-10-05 18:00:00,2099-12-31 23:59:59,1.0,The data is being used for the project.,{}
+3,relation,5,review_of,6,2025-10-05 18:00:00,2099-12-31 23:59:59,0.8,Carolina's review is of the Project Proposal.,{}
+4,relation,2,shares,7,2025-10-05 18:00:00,2099-12-31 23:59:59,1.0,Carolina shared the NetCDF files.,{}
+5,relation,7,uploaded_to,8,2025-10-05 18:00:00,2099-12-31 23:59:59,1.0,NetCDF files were uploaded to Drive.,{}

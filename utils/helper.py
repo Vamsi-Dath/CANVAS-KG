@@ -8,6 +8,7 @@ import openai
 from pathlib import Path
 from schema.entity import Entity
 from schema.relation import Relation
+from docx import Document
 
 logging.basicConfig(level=logging.DEBUG)
 load_dotenv()
@@ -162,3 +163,8 @@ def remove_duplicates_from_r_csv(input_file_path: Path, output_file_path: Path) 
     except Exception as e:
         logging.error(f"Error removing duplicates from {input_file_path} to {output_file_path}: {e}")
         raise
+
+def read_docx_file(self, file_path: str) -> str:
+        doc = Document(file_path)
+        full_text = [p.text for p in doc.paragraphs]
+        return '\n'.join(full_text)

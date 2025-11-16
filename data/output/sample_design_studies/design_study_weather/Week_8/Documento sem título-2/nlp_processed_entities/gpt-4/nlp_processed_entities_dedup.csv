@@ -1,0 +1,18 @@
+idx,name,category,type,valid_start_time,valid_end_time,confidence,description,properties
+0,usability feedback,Concept,Task,2025-11-16 18:00:00,2099-12-31 23:59:59,0.95,,"{'original_name': 'collect usability feedback', 'noun_chunks': ['usability feedback']}"
+1,dashboard,Artifact,Software,2025-11-16 18:00:00,2099-12-31 23:59:59,0.9,,{}
+2,Vamsi,Person,Technical_Advisor,2025-11-16 18:00:00,2099-12-31 23:59:59,0.9,,{}
+3,Discord,Artifact,Tool,2025-11-16 18:00:00,2099-12-31 23:59:59,0.9,,{}
+4,email feedback,Event,Email,2025-11-16 18:00:00,2099-12-31 23:59:59,0.9,,{}
+5,Carolina,Person,User,2025-11-16 18:00:00,2099-12-31 23:59:59,0.9,,{}
+6,the dashboard,Event,Testing,2025-11-16 18:00:00,2099-12-31 23:59:59,0.9,,"{'original_name': 'test the dashboard', 'noun_chunks': ['the dashboard']}"
+7,hour,Concept,Technical_Concept,2025-11-16 18:00:00,2099-12-31 23:59:59,0.9,,"{'original_name': 'mm per hour', 'noun_chunks': ['hour']}"
+8,final step,Concept,Technical_Concept,2025-11-16 18:00:00,2099-12-31 23:59:59,0.8,,{}
+9,timestamps,Concept,Technical_Concept,2025-11-16 18:00:00,2099-12-31 23:59:59,0.9,,{}
+10,ROC tab charts,Artifact,Visualization,2025-11-16 18:00:00,2099-12-31 23:59:59,0.9,,"{'original_name': 'ROC tab charts', 'noun_chunks': ['ROC tab charts']}"
+11,English,Concept,Technical_Concept,2025-11-16 18:00:00,2099-12-31 23:59:59,0.9,,"{'original_name': 'Portuguese to English', 'noun_chunks': ['English']}"
+12,dotted line,Artifact,Visualization,2025-11-16 18:00:00,2099-12-31 23:59:59,0.9,,{}
+13,reference line,Concept,Technical_Concept,2025-11-16 18:00:00,2099-12-31 23:59:59,0.7,,{}
+14,rainfall limit filter,Concept,Technical_Concept,2025-11-16 18:00:00,2099-12-31 23:59:59,0.9,,"{'original_name': 'rainfall limit filter', 'noun_chunks': ['rainfall limit filter']}"
+15,Daniel,Person,Technical_Advisor,2025-11-16 18:00:00,2099-12-31 23:59:59,0.9,,{}
+16,Marcos,Person,Technical_Advisor,2025-11-16 18:00:00,2099-12-31 23:59:59,0.9,,{}

@@ -51,7 +51,7 @@ class CanvasKG:
         extracted_entities = extractor.extract_entities_by_file()
 
         logger.debug(f"Extracted Entities: {[Counter(e.type) for e in extracted_entities]}")
-        proper_entities = nlp_process_entities(extracted_entities, self.input_text_file_path, self.openai_model, self.local_model)
+        proper_entities = nlp_process_entities(extracted_entities, self.input_text_file_path, self.openai_model, self.local_model, self.output_dir)
         logger.debug(f"Processed Entities: {[Counter(e.type) for e in proper_entities]}\n")
 
         logger.info("Extracting relations...")

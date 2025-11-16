@@ -1,0 +1,10 @@
+id,type,subject_entity_id,predicate,object_entity_id,valid_start_time,valid_end_time,confidence,description,properties
+0,relation,0,time_of,1,2025-09-28 18:00:00,2099-12-31 23:59:59,1.0,,{}
+1,relation,2,participated_in,1,2025-09-28 18:00:00,2099-12-31 23:59:59,0.8,,{}
+2,relation,3,participated_in,1,2025-09-28 18:00:00,2099-12-31 23:59:59,1.0,,{}
+3,relation,3,assigned_role_in,7,2025-09-28 18:00:00,2099-12-31 23:59:59,1.0,,{}
+4,relation,6,assigned_role_in,5,2025-09-28 18:00:00,2099-12-31 23:59:59,0.9,,{}
+5,relation,6,participated_in,4,2025-09-28 18:00:00,2099-12-31 23:59:59,0.8,,{}
+6,relation,8,shared_with,3,2025-09-28 18:00:00,2099-12-31 23:59:59,1.0,,{}
+7,relation,9,shared_with,3,2025-09-28 18:00:00,2099-12-31 23:59:59,0.7,,{}
+8,relation,3,gave_feedback_on,10,2025-09-28 18:00:00,2099-12-31 23:59:59,1.0,,{}

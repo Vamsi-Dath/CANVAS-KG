@@ -1,0 +1,12 @@
+idx,name,category,type,valid_start_time,valid_end_time,confidence,description,properties
+0,Mean Error,Concept,Technical_Concept,2025-10-26 18:00:00,2099-12-31 23:59:59,1.0,,{}
+1,Root Mean Squared Error,Concept,Technical_Concept,2025-10-26 18:00:00,2099-12-31 23:59:59,1.0,,{}
+2,heatmap,Artifact,Visualization,2025-10-26 18:00:00,2099-12-31 23:59:59,1.0,,{}
+3,station data,Artifact,Data,2025-10-26 18:00:00,2099-12-31 23:59:59,1.0,,{}
+4,hourly data,Artifact,Data,2025-10-26 18:00:00,2099-12-31 23:59:59,1.0,,{}
+5,simulation data,Artifact,Data,2025-10-26 18:00:00,2099-12-31 23:59:59,1.0,,{}
+6,Carolina,Person,Domain_Expert,2025-10-26 18:00:00,2099-12-31 23:59:59,1.0,,{}
+7,rainfall simulation points,Artifact,Data,2025-10-26 18:00:00,2099-12-31 23:59:59,1.0,,{}
+8,3 km grids,Concept,Technical_Concept,2025-10-26 18:00:00,2099-12-31 23:59:59,1.0,,{}
+9,map,Artifact,Visualization,2025-10-26 18:00:00,2099-12-31 23:59:59,1.0,,{}
+10,ROC curve,Artifact,Visualization,2025-10-26 18:00:00,2099-12-31 23:59:59,1.0,,{}

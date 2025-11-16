@@ -1,0 +1,9 @@
+idx,name,category,type,valid_start_time,valid_end_time,confidence,description,properties
+0,Carolina,Person,User,2025-11-09 18:00:00,2099-12-31 23:59:59,1.0,,{}
+1,dashboard,Artifact,Software,2025-11-09 18:00:00,2099-12-31 23:59:59,1.0,,{}
+2,final testing phase,Event,Testing,2025-11-09 18:00:00,2099-12-31 23:59:59,1.0,,{}
+3,weeks 7 and 8,Concept,Time_Component,2025-11-09 18:00:00,2099-12-31 23:59:59,1.0,,{}
+4,Daniel,Person,Technical_Advisor,2025-11-09 18:00:00,2099-12-31 23:59:59,1.0,,{}
+5,Marcos,Person,Technical_Advisor,2025-11-09 18:00:00,2099-12-31 23:59:59,1.0,,{}
+6,dashboard link,Artifact,Link,2025-11-09 18:00:00,2099-12-31 23:59:59,1.0,,{}
+7,WhatsApp,Artifact,Tool,2025-11-09 18:00:00,2099-12-31 23:59:59,1.0,,{}

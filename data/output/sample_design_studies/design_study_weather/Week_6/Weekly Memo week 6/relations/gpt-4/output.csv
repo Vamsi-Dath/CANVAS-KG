@@ -1,0 +1,6 @@
+id,type,subject_entity_id,predicate,object_entity_id,valid_start_time,valid_end_time,confidence,description,properties
+0,relation,0,implemented_in,1,2025-11-02 18:00:00,2099-12-31 23:59:59,0.95,ROC tab was implemented in the dashboard.,{}
+1,relation,2,contacted_through,3,2025-11-02 18:00:00,2099-12-31 23:59:59,0.95,Carolina was contacted through email.,{}
+2,relation,2,contacted_through,4,2025-11-02 18:00:00,2099-12-31 23:59:59,0.95,Carolina was contacted through WhatsApp.,{}
+3,relation,2,did_not_participate_in,5,2025-11-02 18:00:00,2099-12-31 23:59:59,0.95,Carolina did not participate in validation.,{}
+4,relation,1,discussed_in,6,2025-11-02 18:00:00,2099-12-31 23:59:59,0.9,The dashboard was discussed in previous meetings.,{}

@@ -1,0 +1,12 @@
+idx,name,category,type,valid_start_time,valid_end_time,confidence,description,properties
+0,first week,Concept,Time_Component,2025-09-28 18:00:00,2099-12-31 23:59:59,1.0,,{}
+1,design study project,Concept,Task,2025-09-28 18:00:00,2099-12-31 23:59:59,1.0,,{}
+2,Fabio,Person,Technical_Advisor,2025-09-28 18:00:00,2099-12-31 23:59:59,0.8,Assumed to be a technical advisor based on the context of the text.,{}
+3,Carolina,Person,Domain_Expert,2025-09-28 18:00:00,2099-12-31 23:59:59,1.0,,{}
+4,meeting,Event,Offline_Meeting,2025-09-28 18:00:00,2099-12-31 23:59:59,0.8,Assuming the meeting was physical as there's no information specifying it was online.,{}
+5,the project,Concept,Task,2025-09-28 18:00:00,2099-12-31 23:59:59,1.0,,{}
+6,visualization researcher,Person,Computer_Expert,2025-09-28 18:00:00,2099-12-31 23:59:59,0.9,Assuming the role of a visualization researcher is closely related to the role of a computer expert.,{}
+7,climate science domain,Concept,Domain_Concept,2025-09-28 18:00:00,2099-12-31 23:59:59,1.0,,{}
+8,the first version of the Project Proposal,Artifact,Proposal,2025-09-28 18:00:00,2099-12-31 23:59:59,1.0,,{}
+9,Task Abstraction documents,Artifact,Report,2025-09-28 18:00:00,2099-12-31 23:59:59,0.7,Assuming the task abstraction document is a type of report.,{}
+10,feedback,Concept,Outcome,2025-09-28 18:00:00,2099-12-31 23:59:59,1.0,,{}

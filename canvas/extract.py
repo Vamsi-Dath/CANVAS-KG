@@ -1,4 +1,4 @@
-from utils.helper import run_ollama, validate_entity, validate_relation, save_e_to_csv, save_r_to_csv, remove_duplicates_from_e_csv, remove_duplicates_from_r_csv, openai_chat_completion
+from utils.helper import run_ollama, validate_entity, validate_relation, save_e_to_csv, save_r_to_csv, remove_duplicates_from_e_csv, remove_duplicates_from_r_csv, openai_chat_completion, read_docx_file
 from schema.entity import Entity
 from schema.relation import Relation
 import logging
@@ -90,8 +90,12 @@ class Extractor:
 
     def extract_entities_by_file(self) -> list[Entity]:
         raw_entities = []
-        text = open(self.input_text_file_path, 'r', encoding='utf-8').read()
-        
+
+        if self.input_text_file_path.endswith('.docx'):
+            text = read_docx_file(self.input_text_file_path)
+        else:
+            text = open(self.input_text_file_path, 'r', encoding='utf-8').read()
+
         entity_bank_json = json.load(open(self.entity_bank_json_path, 'r', encoding='utf-8'))
 
         system_prompt_template = open(self.system_prompt_template_path, 'r', encoding='utf-8').read()
@@ -152,7 +156,11 @@ class Extractor:
     
     def extract_realtions_by_file(self) -> list[Relation]:
         extracted_relations = []
-        text = open(self.input_text_file_path, 'r', encoding='utf-8').read()
+
+        if self.input_text_file_path.endswith('.docx'):
+            text = self.read_docx_file(self.input_text_file_path)
+        else:
+            text = open(self.input_text_file_path, 'r', encoding='utf-8').read()
 
         dir = Path(self.output_dir) / Path(self.input_text_file_path).stem / "nlp_processed_entities"
 

@@ -1,0 +1,12 @@
+id,type,subject_entity_id,predicate,object_entity_id,valid_start_time,valid_end_time,confidence,description,properties
+0,relation,0,compared_with,3,2025-10-26 18:00:00,2099-12-31 23:59:59,1.0,,{}
+1,relation,1,compared_with,3,2025-10-26 18:00:00,2099-12-31 23:59:59,1.0,,{}
+2,relation,0,visualized_by,2,2025-10-26 18:00:00,2099-12-31 23:59:59,1.0,,{}
+3,relation,1,visualized_by,2,2025-10-26 18:00:00,2099-12-31 23:59:59,1.0,,{}
+4,relation,3,converted_to,4,2025-10-26 18:00:00,2099-12-31 23:59:59,1.0,,{}
+5,relation,4,compared_with,5,2025-10-26 18:00:00,2099-12-31 23:59:59,1.0,,{}
+6,relation,6,discussed_with,4,2025-10-26 18:00:00,2099-12-31 23:59:59,1.0,,{}
+7,relation,7,plotted_on,9,2025-10-26 18:00:00,2099-12-31 23:59:59,1.0,,{}
+8,relation,7,derived_from,8,2025-10-26 18:00:00,2099-12-31 23:59:59,1.0,,{}
+9,relation,8,visualized_by,9,2025-10-26 18:00:00,2099-12-31 23:59:59,1.0,,{}
+10,relation,10,to_be_worked_on,6,2025-10-26 18:00:00,2099-12-31 23:59:59,1.0,,{}

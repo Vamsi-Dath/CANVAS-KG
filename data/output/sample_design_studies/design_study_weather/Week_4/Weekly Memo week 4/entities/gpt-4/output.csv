@@ -1,0 +1,17 @@
+idx,name,category,type,valid_start_time,valid_end_time,confidence,description,properties
+0,R programming language,Artifact,Tool,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+1,Shiny library,Artifact,Tool,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+2,Carolina,Person,User,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+3,simulation round data,Artifact,Data,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+4,3 km point grid,Concept,Domain_Concept,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+5,6 km and 9 km grids,Concept,Domain_Concept,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+6,heatmap,Artifact,Visualization,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+7,average error and RMSE measures,Concept,Technical_Concept,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+8,ROC curve,Artifact,Visualization,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+9,POD (Probability of Detection),Concept,Technical_Concept,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+10,FAR (False Alarm Ratio),Concept,Technical_Concept,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+11,simulation rounds,Concept,Technical_Concept,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+12,dashboard prototype,Artifact,Prototype,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+13,email,Event,Email,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+14,formulas,Artifact,Algorithm,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+15,rainfall,Artifact,Data,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}

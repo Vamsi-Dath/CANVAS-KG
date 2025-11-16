@@ -1,0 +1,6 @@
+id,type,subject_entity_id,predicate,object_entity_id,valid_start_time,valid_end_time,confidence,description,properties
+0,relation,0,sent_to,1,2025-10-12 18:00:00,2099-12-31 23:59:59,0.85,Carolina sent '.nc files' to the narrator.,{}
+1,relation,2,used_for_communication,0,2025-10-12 18:00:00,2099-12-31 23:59:59,1.0,Email was used for communication with Carolina.,{}
+2,relation,0,assisted_in_creation_of,3,2025-10-12 18:00:00,2099-12-31 23:59:59,0.7,Carolina assisted in the creation of 'isolated visualizations' by providing guidance.,{}
+3,relation,4,used_for_building,5,2025-10-12 18:00:00,2099-12-31 23:59:59,0.8,Tools will be used for building the 'final dashboard'.,{}
+4,relation,6,considered_for_use,5,2025-10-12 18:00:00,2099-12-31 23:59:59,1.0,Figma was considered for use in building the 'final dashboard'.,{}

@@ -1,0 +1,14 @@
+id,type,subject_entity_id,predicate,object_entity_id,valid_start_time,valid_end_time,confidence,description,properties
+0,relation,0,used_with,1,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+1,relation,12,developed_using,0,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+2,relation,2,interacted_with,12,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+3,relation,12,displays,3,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+4,relation,12,incorporates,4,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+5,relation,12,incorporates,5,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+6,relation,6,displays,7,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+7,relation,8,represents,9,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+8,relation,8,represents,10,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+9,relation,8,corresponds_to,11,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+10,relation,2,communicated_via,13,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+11,relation,2,review,14,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}
+12,relation,14,used_for,15,2025-10-19 18:00:00,2099-12-31 23:59:59,1.0,,{}

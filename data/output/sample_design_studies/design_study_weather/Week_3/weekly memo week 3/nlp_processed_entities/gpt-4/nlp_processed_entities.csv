@@ -1,0 +1,8 @@
+idx,name,category,type,valid_start_time,valid_end_time,confidence,description,properties
+0,Carolina,Person,Technical_Advisor,2025-10-12 18:00:00,2099-12-31 23:59:59,0.7,Carolina seems to be providing technical guidance and support in the context.,{}
+1,.nc files,Artifact,Data,2025-10-12 18:00:00,2099-12-31 23:59:59,1.0,,{}
+2,email,Event,Email,2025-10-12 18:00:00,2099-12-31 23:59:59,1.0,,{}
+3,isolated visualizations,Artifact,Visualization,2025-10-12 18:00:00,2099-12-31 23:59:59,1.0,,{}
+4,tools,Artifact,Tool,2025-10-12 18:00:00,2099-12-31 23:59:59,0.8,"In this context, 'tools' refers to software or other utilities used for developing the dashboard.",{}
+5,final dashboard,Artifact,Software,2025-10-12 18:00:00,2099-12-31 23:59:59,0.9,,{}
+6,Figma,Artifact,Tool,2025-10-12 18:00:00,2099-12-31 23:59:59,1.0,,{}

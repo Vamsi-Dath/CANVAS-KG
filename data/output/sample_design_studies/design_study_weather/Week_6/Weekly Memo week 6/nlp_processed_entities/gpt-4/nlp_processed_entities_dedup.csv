@@ -1,0 +1,8 @@
+idx,name,category,type,valid_start_time,valid_end_time,confidence,description,properties
+0,ROC tab,Artifact,Web_Component,2025-11-02 18:00:00,2099-12-31 23:59:59,0.9,A part of the dashboard that was implemented during the week.,{}
+1,dashboard,Artifact,Software,2025-11-02 18:00:00,2099-12-31 23:59:59,0.95,The dashboard that is being worked on and improved.,{}
+2,Carolina,Person,User,2025-11-02 18:00:00,2099-12-31 23:59:59,0.95,The person who was contacted for validation but was too busy to respond.,{}
+3,email,Event,Email,2025-11-02 18:00:00,2099-12-31 23:59:59,0.9,The method used to try and contact Carolina initially.,{}
+4,WhatsApp,Artifact,Software,2025-11-02 18:00:00,2099-12-31 23:59:59,0.85,The platform used to eventually reach Carolina.,{}
+5,validation,Event,Testing,2025-11-02 18:00:00,2099-12-31 23:59:59,0.9,The task that could not be done with Carolina due to her busy schedule.,{}
+6,previous meetings,Event,Offline_Meeting,2025-11-02 18:00:00,2099-12-31 23:59:59,0.85,Past meetings where discussions related to the dashboard took place.,{}
