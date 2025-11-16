@@ -61,7 +61,7 @@ def openai_chat_completion(model: str, system_prompt: str, user_prompt: str, tem
         except Exception as e:
             logging.warning(f"Ollama Error: {e}. Re-run in 5 seconds... Attempts left: {max_tries}")
             time.sleep(5)
-    logging.debug(f"Model: {model}\nPrompt:\n {messages}\n Result: {response.choices[0].message.content}")
+    # logging.debug(f"Model: {model}\nPrompt:\n {messages}\n Result: {response.choices[0].message.content}")
     return response.choices[0].message.content
 
 

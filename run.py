@@ -1,5 +1,6 @@
 from argparse import ArgumentParser
 from canvas.canvas_framework import CanvasKG
+from datetime import datetime
 
 if __name__ == "__main__":
     parser = ArgumentParser()
@@ -50,7 +51,19 @@ if __name__ == "__main__":
         default = "llama3.1:8b",
         type = str,
         help = "Local on-device model usage."
-    )   
+    )
+    parser.add_argument(
+        "--valid_start_time",
+        default = datetime.now(),
+        type = lambda s: datetime.strptime(s, "%Y-%m-%d %H:%M:%S"),
+        help = "The time when the entities and relationships start to be valid."
+    )
+    parser.add_argument(
+        "--valid_end_time",
+        default = datetime(2099, 12, 31, 23, 59, 59),
+        type = lambda s: datetime.strptime(s, "%Y-%m-%d %H:%M:%S"),
+        help = "The time when the entities and relationships end to be valid."
+    )
     args = parser.parse_args()
     args = vars(args)
     canvas_kg = CanvasKG(**args)

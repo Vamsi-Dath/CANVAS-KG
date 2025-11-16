@@ -28,8 +28,10 @@ python run.py \
     --entity_bank_json_path ./data/Entity_Bank.json \
     --system_prompt_template_path ./prompts/system_prompt_template.txt \
     --relationship_extraction_template_path ./prompts/relationship_extraction_template.txt \
-    --openai_model gpt-4
-    --local_model llama3.1:
+    --openai_model gpt-4 \
+    --local_model llama3.1:8b \
+    --valid_start_time "2025-09-22 00:00:00" \
+    --valid_end_time "2025-09-28 23:59:59"
 ```
 
 ## Development Timeline
@@ -40,5 +42,8 @@ python run.py \
 
 ![assets/methodology(high-level).webp](assets/methodology(high-level).webp)
 
-## Example Run - (assets/example_run_nov_14_gpt-4.png)
+## Example Run (Global view) - (assets/example_run_nov_14_gpt-4.png)
 ![assets/example_run_nov_14_gpt-4.png](assets/example_run_nov_14_gpt-4.png)
+
+## Example Run (Hierarchial view) - (assets/example_run_nov_15_gpt-4.png)
+![assets/example_run_nov_15_gpt-4.png](assets/example_run_nov_15_gpt-4.png)

@@ -1,0 +1,12 @@
+id,type,subject_entity_id,predicate,object_entity_id,valid_start_time,valid_end_time,confidence,description,properties
+0,relation,0,starts_with,1,2025-11-15 19:58:53,2099-12-31 23:59:59,0.9,,{}
+1,relation,0,basis_for,2,2025-11-15 19:58:53,2099-12-31 23:59:59,0.7,,{}
+2,relation,0,related_to,4,2025-11-15 19:58:53,2099-12-31 23:59:59,0.5,to know about the project,{}
+3,relation,2,requires,3,2025-11-15 19:58:53,2099-12-31 23:59:59,0.5,to fill the documentation,{}
+4,relation,2,defines,6,2025-11-15 19:58:53,2099-12-31 23:59:59,0.4,,{}
+5,relation,6,related_to,8,2025-11-15 19:58:53,2099-12-31 23:59:59,0.2,to make a simulation to calculate whether at any point for any given route hazardous weather is going to exist at the same time as a driver passes,{}
+6,relation,2,optimizes,8,2025-11-15 19:58:53,2099-12-31 23:59:59,0.1,,{}
+7,relation,9,advised_by,10,2025-11-15 19:58:53,2099-12-31 23:59:59,0.7,to present my approach to this problem and seek their advice on data I should count,"{'original_name': 'meeting with domain experts', 'noun_chunks': ['domain experts']}"
+8,relation,10,requires,11,2025-11-15 19:58:53,2099-12-31 23:59:59,0.6,,{}
+9,relation,11,includes,12,2025-11-15 19:58:53,2099-12-31 23:59:59,0.5,,{}
+10,relation,10,requires,13,2025-11-15 19:58:53,2099-12-31 23:59:59,0.3,,{}

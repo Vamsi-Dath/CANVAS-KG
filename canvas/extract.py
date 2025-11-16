@@ -4,10 +4,11 @@ from schema.relation import Relation
 import logging
 from pathlib import Path
 import json
+from datetime import datetime
 
 logger = logging.getLogger(__name__)
 class Extractor:
-    def __init__(self, input_text_file_path: str, output_dir: str, output_file_name: str, entity_bank_json_path: str, system_prompt_template_path: str, relationship_extraction_template_path: str, openai_model: str, local_model: str) -> None:
+    def __init__(self, input_text_file_path: str, output_dir: str, output_file_name: str, entity_bank_json_path: str, system_prompt_template_path: str, relationship_extraction_template_path: str, openai_model: str, local_model: str, valid_start_time: datetime, valid_end_time: datetime) -> None:
         self.input_text_file_path = input_text_file_path
         self.output_dir = output_dir
         self.output_file_name = output_file_name
@@ -16,11 +17,14 @@ class Extractor:
         self.relationship_extraction_template_path = relationship_extraction_template_path
         self.openai_model = openai_model
         self.local_model = local_model
+        self.valid_start_time = valid_start_time
+        self.valid_end_time = valid_end_time
 
     def extract_json_objects(self, text: str) -> list[str]:
         json_objects = []
         start = None
         count = 0
+        failed = 0
         for i, ch in enumerate(text):
             if ch == '{':
                 if not count:
@@ -29,8 +33,15 @@ class Extractor:
             elif ch == '}':
                 count -= 1
                 if not count and start is not None:
-                        json_objects.append(text[start:i+1])
+                        json_str = text[start:i+1]
+                        try:
+                            json_obj = json.loads(json_str)
+                            json_objects.append(json_obj)
+                        except json.JSONDecodeError:
+                            failed += 1
                         start = None
+        if failed > 0:
+            logging.warning(f"Failed to decode JSON objects: {failed}")
         return json_objects
     
     """
@@ -109,10 +120,13 @@ class Extractor:
 
         entities = []
         for e in raw_entities:
+            e["valid_start_time"] = self.valid_start_time.strftime("%Y-%m-%d %H:%M:%S")
+            e["valid_end_time"] = self.valid_end_time.strftime("%Y-%m-%d %H:%M:%S")
+            e_json = json.dumps(e)
             try:
-                entities.append(validate_entity(e))
+                entities.append(validate_entity(e_json))
             except Exception as ve:
-                logging.warning(f"Skipping Entity: {e}, due to failed pydantic validation")
+                logging.warning(f"Skipping Entity: {e_json}, due to failed pydantic validation")
                 continue
         logging.info(f"Total validated entities count: {len(entities)}\n")
 
@@ -120,9 +134,11 @@ class Extractor:
         
         if self.openai_model:
             dir = dir / self.openai_model
-        else:
+        elif self.local_model:
             dir = dir / self.local_model
-            
+        else:
+            dir = dir / "unknown_model"
+
         dir.mkdir(parents=True, exist_ok=True)
         if self.output_dir and self.output_file_name and self.output_file_name.endswith('.csv'):
             save_e_to_csv(dir, self.output_file_name, entities)
@@ -142,8 +158,10 @@ class Extractor:
 
         if self.openai_model:
             dir = dir / self.openai_model
-        else:
+        elif self.local_model:
             dir = dir / self.local_model
+        else:
+            dir = dir / "unknown_model"
 
         dedup_file = dir / "nlp_processed_entities_dedup.csv"
 
@@ -176,10 +194,13 @@ class Extractor:
 
         relations = []
         for r in extracted_relations:
+            r["valid_start_time"] = self.valid_start_time.strftime("%Y-%m-%d %H:%M:%S")
+            r["valid_end_time"] = self.valid_end_time.strftime("%Y-%m-%d %H:%M:%S")
+            r_json = json.dumps(r)
             try:
-                relations.append(validate_relation(r))
+                relations.append(validate_relation(r_json))
             except Exception as ve:
-                logging.warning(f"Skipping Relation: {r}, due to failed pydantic validation")
+                logging.warning(f"Skipping Relation: {r_json}, due to failed pydantic validation")
                 continue
         logging.info(f"Total validated relations count: {len(relations)}\n")
 
@@ -187,8 +208,10 @@ class Extractor:
 
         if self.openai_model:
             dir = dir / self.openai_model
-        else:
+        elif self.local_model:
             dir = dir / self.local_model
+        else:
+            dir = dir / "unknown_model"
 
         dir.mkdir(parents=True, exist_ok=True)
         if self.output_dir and self.output_file_name and self.output_file_name.endswith('.csv'):

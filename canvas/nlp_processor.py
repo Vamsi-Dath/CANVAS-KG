@@ -7,7 +7,7 @@ from schema.entity import Entity
 logging.basicConfig(level=logging.DEBUG)
 nlp = spacy.load("en_core_web_md")
 
-def nlp_process_entities(entities: list[Entity], input_text_file_path: str, openai_model=None ) -> list[Entity]:
+def nlp_process_entities(entities: list[Entity], input_text_file_path: str, openai_model=None, local_model=None ) -> list[Entity]:
     processed_entities = []
     for entity in entities:
         if len(entity.name.split()) < 3:
@@ -35,8 +35,10 @@ def nlp_process_entities(entities: list[Entity], input_text_file_path: str, open
 
     if openai_model:
         dir = dir / openai_model
+    elif local_model:
+        dir = dir / local_model
     else:
-        dir = dir / "llama3.1_8b"
+        dir = dir / "unknown_model"
 
     dir.mkdir(parents=True, exist_ok=True)
     save_e_to_csv(dir, "nlp_processed_entities.csv", processed_entities)

@@ -1,28 +1,21 @@
-idx,name,category,type,confidence,description,properties
-0,Week 1,Concept,Timeline,1.0,,{}
-1,22-9-2025 - 29-09-2025,Concept,Time_Component,1.0,,"{'original_name': '22-9-2025 - 29-09-2025', 'noun_chunks': []}"
-2,documentation,Artifact,Documentation,1.0,,{}
-3,instructions,Concept,Instruction,1.0,,{}
-4,project,Concept,Domain_Concept,1.0,,{}
-5,scope,Concept,Scope,1.0,,{}
-6,research questions,Concept,Domain_Concept,1.0,,{}
-7,visualization,Artifact,Visualization,1.0,,{}
-8,knowledge graph,Artifact,Data_Model,1.0,,{}
-9,Vamsi,Person,Computer_Expert,0.9,Assumed to be a computer expert based on the context that he is developing a knowledge graph.,{}
-10,simulation,Event,Simulation,1.0,,{}
-11,hazardous weather,Concept,Weather_Event,1.0,,{}
-12,driver,Person,Data_Subject,1.0,,{}
-13,algorithm,Artifact,Algorithm,1.0,,{}
-14,domain experts,Person,Domain_Expert,1.0,,{}
-15,project definition template,Artifact,Template,1.0,,"{'original_name': 'project definition template', 'noun_chunks': ['project definition template']}"
-16,task abstraction template,Artifact,Template,1.0,,"{'original_name': 'task abstraction template', 'noun_chunks': ['task abstraction template']}"
-17,meeting,Event,Offline_Meeting,1.0,,{}
-18,data,Artifact,Data,1.0,,{}
-19,executive slide,Artifact,Presentation,1.0,,{}
-20,15 minutes,Concept,Time_Component,1.0,,{}
-21,30 minutes,Concept,Time_Component,1.0,,{}
-22,project proposal,Artifact,Proposal,1.0,,{}
-23,tasks,Concept,Task,1.0,,{}
-24,data modelling,Artifact,Data_Model,1.0,,{}
-25,frontend,Artifact,Web_Component,1.0,,{}
-26,project timeline,Concept,Timeline,1.0,,{}
+idx,name,category,type,valid_start_time,valid_end_time,confidence,description,properties
+0,Week,Concept,Timeline,2025-11-15 18:00:00,2025-12-31 23:59:59,1.0,,"{'original_name': 'Week 1 (22-9-2025 - 29-09-2025)', 'noun_chunks': ['Week']}"
+1,start,Event,Development,2025-11-15 18:00:00,2025-12-31 23:59:59,1.0,,"{'original_name': 'start of the project', 'noun_chunks': ['start', 'the project']}"
+2,instructions,Concept,Instruction,2025-11-15 18:00:00,2025-12-31 23:59:59,1.0,Instructions on what documentation I should be working troughout the week and what information should I be filling.,{}
+3,documentation,Artifact,Documentation,2025-11-15 18:00:00,2025-12-31 23:59:59,1.0,Documentation that the user is supposed to fill.,{}
+4,project,Concept,Task,2025-11-15 18:00:00,2025-12-31 23:59:59,1.0,"The user is defining what does the project pretend to achieve, its scope and the research questions.",{}
+5,knowledge graph,Artifact,Data_Model,2025-11-15 18:00:00,2025-12-31 23:59:59,0.9,The knowledge graph is something that Vamsi is going to be developing with all the information he is obtaining from the users' projects.,{}
+6,simulation,Event,Simulation,2025-11-15 18:00:00,2025-12-31 23:59:59,1.0,Approach to make a simulation to calculate whether at any point for any given route hazardous weather is going to exist at the same time as a driver passes.,{}
+7,algorithm,Artifact,Algorithm,2025-11-15 18:00:00,2025-12-31 23:59:59,1.0,The user is thinking on how to make the algorithm as cheap as possible.,{}
+8,domain experts,Person,Domain_Expert,2025-11-15 18:00:00,2025-12-31 23:59:59,1.0,The user is interacting with the domain experts.,{}
+9,project definition template,Artifact,Template,2025-11-15 18:00:00,2025-12-31 23:59:59,1.0,By the end of the week the user got a much larger project definition template.,"{'original_name': 'project definition template', 'noun_chunks': ['project definition template']}"
+10,task abstraction template,Artifact,Template,2025-11-15 18:00:00,2025-12-31 23:59:59,1.0,The user received a task abstraction template which they'll be working on throughout the next week.,"{'original_name': 'task abstraction template', 'noun_chunks': ['task abstraction template']}"
+11,meeting,Event,Offline_Meeting,2025-11-15 18:00:00,2025-12-31 23:59:59,0.9,The user plans to have a meeting with the domain experts next week to present their approach.,{}
+12,executive slide,Artifact,Presentation,2025-11-15 18:00:00,2025-12-31 23:59:59,1.0,,{}
+13,first meeting,Event,Offline_Meeting,2025-11-15 18:00:00,2025-12-31 23:59:59,1.0,The user is basing their timeframe on the first meeting they had with the Domain Experts where they only could attend for 30 minutes.,{}
+14,project proposal,Artifact,Proposal,2025-11-15 18:00:00,2025-12-31 23:59:59,1.0,The user will keep working on the project proposal next week.,{}
+15,tasks,Concept,Task,2025-11-15 18:00:00,2025-12-31 23:59:59,1.0,The user will be abstracting all the tasks they'll be doing for the project.,{}
+16,data,Artifact,Data,2025-11-15 18:00:00,2025-12-31 23:59:59,1.0,,{}
+17,data modelling,Artifact,Data_Model,2025-11-15 18:00:00,2025-12-31 23:59:59,1.0,The user plans to start with the data modelling once they have access to the data.,{}
+18,frontend,Artifact,Web_Component,2025-11-15 18:00:00,2025-12-31 23:59:59,1.0,The user plans to start working on the frontend once the domain experts approve of the project.,{}
+19,project timeline,Concept,Timeline,2025-11-15 18:00:00,2025-12-31 23:59:59,1.0,The user mentions that the project timeline is quite adjusted.,{}
