@@ -47,3 +47,6 @@ python run.py \
 
 ## Example Run (Hierarchial view) - (assets/example_run_nov_15_gpt-4.png)
 ![assets/example_run_nov_15_gpt-4.png](assets/example_run_nov_15_gpt-4.png)
+
+## Example Run (Merged Tiemline view) - (assets/example_run_nov_16_gpt-4.png)
+![assets/example_run_nov_16_gpt-4.png](assets/example_run_nov_16_gpt-4.png)
