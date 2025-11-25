@@ -42,6 +42,10 @@ python run.py \
 
 ![assets/methodology(high-level).webp](assets/methodology(high-level).webp)
 
+## Execution Flow
+
+![assets/execution_flow.png](assets/execution_flow.png)
+
 ## Example Run (Global view) - (assets/example_run_nov_14_gpt-4.png)
 ![assets/example_run_nov_14_gpt-4.png](assets/example_run_nov_14_gpt-4.png)
 
