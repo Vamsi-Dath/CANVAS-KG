@@ -1,6 +1,8 @@
 # CANVAS-KG
 Visualization framework for capturing Collaborative Authoring in Urban Visual Analytics Systems
 
+![assets/teaser.png](assets/teaser.png)
+
 ## Clone the repository with submodules
 ```
 git clone https://github.com/Vamsi-Dath/CANVAS-KG.git
@@ -45,6 +47,15 @@ python run.py \
 ## Execution Flow
 
 ![assets/execution_flow.png](assets/execution_flow.png)
+
+## Case Studies
+### Urban Accessability
+![assets/urban-accessibility-dashboard.png](assets/urban-accessibility-dashboard.png)
+
+### Transportation
+![assets/Transportation-methodology.png](assets/Transportation-methodology.png)
+### Climate
+![assets/Climate.png](assets/Climate.png)
 
 ## Example Run (Global view) - (assets/example_run_nov_14_gpt-4.png)
 ![assets/example_run_nov_14_gpt-4.png](assets/example_run_nov_14_gpt-4.png)
