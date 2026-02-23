@@ -42,7 +42,7 @@ python run.py \
 
 ## Methodology
 
-![assets/methodology(high-level).webp](assets/methodology(high-level).webp)
+![assets/methodology(high-level).webp](assets/methodology_high_level.png)
 
 ## Execution Flow
 
